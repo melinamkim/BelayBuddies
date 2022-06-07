@@ -14,15 +14,9 @@ class AvailabilitiesController < ApplicationController
     end
   end
 
-  # def edit
-  # end
-
-  # def update
-  # end
-
   private
 
   def availability_params
     params.require(:availability).permit(:date, :begin_time, :end_time)
-	end
+  end
 end
