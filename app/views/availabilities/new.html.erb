@@ -1,0 +1,8 @@
+<h1>Add your availability!</h1>
+
+<%= simple_form_for(@availability) do |f| %>
+<%= f.input :date %>
+<%= f.input :begin_time %>
+<%= f.input :end_time %>
+<%= f.submit "Set my availability", class: "btn btn-danger btn-lg" %>
+<% end %>
