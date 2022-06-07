@@ -10,4 +10,8 @@ class User < ApplicationRecord
   def chatrooms
     Chatroom.where(requester: self).or(Chatroom.where(receiver: self))
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
