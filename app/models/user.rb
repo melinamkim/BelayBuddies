@@ -14,4 +14,14 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def types_of_climbing
+    types = []
+    types << 'bouldering' if bouldering?
+    types << 'ice climbing' if ice_climbing?
+    types << 'mountaineering' if mountaineering?
+    types << 'alpine climbing' if alpine_climbing?
+    types << 'sport climbing' if sport_climbing?
+    types.join(', ')
+  end
 end
