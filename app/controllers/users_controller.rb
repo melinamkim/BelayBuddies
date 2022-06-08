@@ -2,14 +2,18 @@ class UsersController < ApplicationController
   # Code may change dependent on the exact search functionality we want.
   # i.e. initial search based on one criterion then further filtering VERSUS initial search using all filters.
   def index
+
+    @users = User.all
+
+
+
+    @users = @users.where("location = ?", params[:location]) if params[:gender].present? && params[:gender] != ""
+    @users = @users.where("gender = ?", params[:gender]) if params[:gender].present? && params[:gender] != ""
+    @users = @users.where("type_of_climbing = ?", params[:type_of_climbing]) if params[:type_of_climbing].present? && params[:type_of_climbing] != ""
     handle_search_location
     handle_filters
   end
 
-  def clear
-    clear_session(:search_location, :filter_location, :filter)
-    redirect_to users_path
-  end
 
   def show
     @user = User.find(params[:id])
