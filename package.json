@@ -1,6 +1,6 @@
 {
-  "name": "app",
-  "private": "true",
+  "name": "webconfig",
+  "private": true,
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.3",
@@ -12,5 +12,10 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js"
-  }
+  },
+  "version": "buuild",
+  "main": "index.js",
+  "repository": "git@github.com:melinamkim/BelayBuddies.git",
+  "author": "Usman Akram <uakram86@gmail.com>",
+  "license": "MIT"
 }
