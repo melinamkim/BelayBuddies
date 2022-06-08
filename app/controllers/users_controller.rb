@@ -8,13 +8,17 @@ class UsersController < ApplicationController
     @users = @users.near(params[:location], 5) if params[:location].present? && params[:location] != ""
 
   # filters - to be done once geocoding aspect works
-    @users = @users.where("gender = ?", params[:gender]) if params[:gender].present? && params[:gender] != ""
-    @users = @users.where("age = ?", params[:age]) if params[:age].present? && params[:age] != ""
-    @users = @users.where("level = ?", params[:level]) if params[:level].present? && params[:level] != ""
-    @users = @users.where("type_of_climbing = ?", params[:type_of_climbing]) if params[:type_of_climbing].present? && params[:type_of_climbing] != ""
+    # @users = @users.where("gender = ?", params[:gender]) if params[:gender].present? && params[:gender] != ""
+    # @users = @users.where("age = ?", params[:age]) if params[:age].present? && params[:age] != ""
+    # @users = @users.where("level = ?", params[:level]) if params[:level].present? && params[:level] != ""
+    # @users = @users.where("type_of_climbing = ?", params[:type_of_climbing]) if params[:type_of_climbing].present? && params[:type_of_climbing] != ""
 
-
-  # eventually put mapbox markers code here
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
+    end
   end
 
 

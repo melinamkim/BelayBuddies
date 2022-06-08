@@ -1,26 +1,38 @@
-<h1>Profile</h1>
+<div class="container d-flex mt-5">
+  <div class="row justify-content-center" id="name">
+    <div class="col-6">
+      <h1 class="heading text-primary fw-bolder text-center"><%= @user.full_name %></h1>
+      <img src="https://images.unsplash.com/photo-1610768798760-e01a4b43814e?ixlib=rb-1.2.1&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&q=80" alt="">
+      <ul class="list-group fs-5 show-ul">
+        <li class="list-group-item"> Age: <%= @user.age %><%= " "%><%= @user.gender == "male" ? '<i class="fa-solid fa-mars"></i>'.html_safe : '<i class="fa-solid fa-venus"></i>'.html_safe %></li>
+        <li class="list-group-item">Level: <%= @user.level %></li>
+        <li class="list-group-item">📍 Location: <%= @user.location %></li>
+        <li class="list-group-item">🧗 <%= @user.types_of_climbing %></li>
+      </ul>
+      <br>
+      <p class="fs-5"><%= link_to "Back to climbers", users_path, class: "btn btn-warning btn-lg" %></p>
+    </div>
 
-<h1><%= @user.full_name %></h1>
-
+  <div class="col-6 fs-5">
   <% if @user.reviews.empty? %>
     <small><em class="text-muted">Be the first one to review this climber</em></small>
   <% end %>
 
 
       <div class="bg-white rounded p-3">
-        <h5>Add your review:</h5>
+        <h5 class="text-center">⭐ Review this Climber ⭐</h5>
         <%= simple_form_for [@user, @review] do |f| %>
           <%= f.input :description, placeholder: "Add your review here..." %>
-          <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { data: { controller: "jquery-bar-rating" } } %>
+          <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "Select your rating", input_html: { data: { controller: "jquery-bar-rating" } } %>
           <%= f.submit class:"btn btn-flat" %>
         <% end %>
       </div>
 
 <h3>Reviews:</h3>
-<%# <i class="fas fa-star star-yellow"></i> %>
 <% @user.reviews.each do |review| %>
-  <p><%= review.description %></p> <%= '*' * review.rating %>
+  <p><%= review.description %></p> <%= '<i class="fas fa-star star-yellow"></i>'.html_safe * review.rating %>
 <% end %>
 <br>
 
-<%= link_to "Back to Profiles", users_path, class: "btn btn-primary btn-lg" %>
+</div>
+</div>
