@@ -2,14 +2,19 @@ class UsersController < ApplicationController
   # Code may change dependent on the exact search functionality we want.
   # i.e. initial search based on one criterion then further filtering VERSUS initial search using all filters.
   def index
-    handle_search_location
-    handle_filters
+
+    @users = User.all
+
+    @users = @users.near(params[:location], 5) if params[:location].present? && params[:location] != ""
+
+  # filters - to be done once geocoding aspect works
+    @users = @users.where("gender = ?", params[:gender]) if params[:gender].present? && params[:gender] != ""
+    @users = @users.where("age = ?", params[:age]) if params[:age].present? && params[:age] != ""
+    @users = @users.where("level = ?", params[:level]) if params[:level].present? && params[:level] != ""
+    @users = @users.where("type_of_climbing = ?", params[:type_of_climbing]) if params[:type_of_climbing].present? && params[:type_of_climbing] != ""
+
   end
 
-  def clear
-    clear_session(:search_location, :filter_location, :filter)
-    redirect_to users_path
-  end
 
   def show
     @user = User.find(params[:id])
