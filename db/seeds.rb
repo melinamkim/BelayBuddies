@@ -31,7 +31,7 @@ p "new user created"
 
 file_4 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654702597/Belay_Buddies/phelim1_nbbta9.png")
 person4 = User.create!(email: "phelim@gmail.com", password: "123456", first_name: "Phelim", last_name: "Dunleavy", gender: "male", level: "advanced", age: 28, location: "Hoxton, London", outdoor_trad_climbing:true, outdoor_sport_climbing:true)
-person4.photo.attach(io: file_5, filename:"nes.png", content_type: "image/png")
+person4.photo.attach(io: file_4, filename:"nes.png", content_type: "image/png")
 p "new user created"
 
 file_5 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654704515/Belay_Buddies/Louis_rmm3mf.png")
