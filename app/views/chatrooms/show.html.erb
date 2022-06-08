@@ -1,14 +1,10 @@
-<div class="container chatroom">
-  <h1>#<%=  %></h1>
+<div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+  <p><%= current_user.first_name %></p>
+  <div class="messages" data-chatroom-subscription-target="messages">
 
-  <div class="messages" data-controller="chatroom-subscription"
-    data-chatroom-subscription-target="messages"
-    data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
-  >
-
-  <% @chatroom.messages.each do |message| %>
-    <%= render 'messages/message', message: message %>
-  <% end %>
+    <% @chatroom.messages.each do |message| %>
+      <%= render 'messages/message', message: message %>
+    <% end %>
 
   </div>
 
@@ -16,12 +12,12 @@
   html: {class: "d-flex"} do |f|
   %>
 
-  <%= f.input :content,
-    label: false,
-    placeholder: "Send a message",
-    wrapper_html: {class: "flex-grow-1"}
-  %>
+    <%= f.input :content,
+      label: false,
+      placeholder: "Send a message",
+      wrapper_html: {class: "flex-grow-1"}
+    %>
 
-  <%= f.submit "Send", class:"btn btn-primary mb-3"%>
+    <%= f.submit "Send", class:"btn btn-primary mb-3"%>
   <% end %>
-  </div>
+</div>
