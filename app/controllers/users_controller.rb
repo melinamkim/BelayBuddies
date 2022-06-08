@@ -13,6 +13,8 @@ class UsersController < ApplicationController
     @users = @users.where("level = ?", params[:level]) if params[:level].present? && params[:level] != ""
     @users = @users.where("type_of_climbing = ?", params[:type_of_climbing]) if params[:type_of_climbing].present? && params[:type_of_climbing] != ""
 
+
+  # eventually put mapbox markers code here
   end
 
 
