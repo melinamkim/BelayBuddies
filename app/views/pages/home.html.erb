@@ -1,10 +1,19 @@
-<div class="banner" style="background-image: url(<%= asset_path('homepage.jpg') %>)">
+<div class="banner" style="background-image: url(<%= asset_path('stroghold_2.jpeg') %>)">
   <div class="container text-center">
     <h1>Belay Buddies</h1>
-    <p><span data-controller="typed-js"></span></p>
+      <p><span data-controller="typed-js"></span></p>
 
 
-    <form action='/users' class="row row-cols-lg-auto g-3 align-items-center" id="searchbar">
+    <div class="container h-100">
+      <div class="d-flex justify-content-center h-100">
+        <div class="searchbar">
+          <input class="search_input" type="text" name="" placeholder="Search...">
+          <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <form action='/users' class="align-items-center" id="searchbar">
       <div class="col-12">
         <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
         <div class="input-group">
