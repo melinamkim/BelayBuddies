@@ -1,0 +1,117 @@
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding-left: 15px;
+  padding-top: 20px;
+}
+
+.text-center {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 18px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  &:hover {
+    color: #fff;
+    transform: translate3d(0,-5%,0) translate3d(0,-5px,0);
+  }
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 21px;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 21px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: flex-end;
+  position: relative;
+  background-color:#FFE4B5;
+  font-size: 22px;
+  font-weight: bolder;
+  &:hover {
+    background:rgb(46, 42, 42);
+  }
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.locationcolor {
+  color: rgb(243, 108, 12);
+}
