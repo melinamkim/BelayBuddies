@@ -10,11 +10,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :level
       t.integer :age
       t.string :location
-      t.boolean :bouldering
-      t.boolean :ice_climbing
-      t.boolean :mountaineering
-      t.boolean :alpine_climbing
-      t.boolean :sport_climbing
+      t.boolean :indoor_bouldering
+      t.boolean :indoor_sport_climbing
+      t.boolean :indoor_top_roping
+      t.boolean :outdoor_bouldering
+      t.boolean :outdoor_sport_climbing
+      t.boolean :outdoor_trad_climbing
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
