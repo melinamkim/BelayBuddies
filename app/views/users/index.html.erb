@@ -1,0 +1,9 @@
+<h1>Climbers</h1>
+<% @users.each do |user| %>
+
+  <div>
+    <%= link_to user.full_name, user_path(user) %>
+    <%= user.gender %>
+    <%= user.types_of_climbing %>
+  </div>
+<% end %>
