@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :availabilities
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_one_attached :photo
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
@@ -27,4 +28,5 @@ class User < ApplicationRecord
     types << 'outdoor trad climbing' if outdoor_trad_climbing?
     types.join(', ')
   end
+
 end
