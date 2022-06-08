@@ -3,9 +3,9 @@
   data-action="scroll@window->navbar#updateNavbar"
 >
   <div class="container-fluid">
-    <%= link_to root_path "#", class: "navbar-brand" do %>
-    <header class="fs-4">🧗 Belay Buddie⚡️ 🧗🏽‍♂️</header>
-    <% end %>
+    <a class="navbar-brand" href="#">
+      <img src="<%= asset_path("high_five.gif")%>" />
+    </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
