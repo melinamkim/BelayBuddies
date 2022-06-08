@@ -19,12 +19,12 @@ class User < ApplicationRecord
 
   def types_of_climbing
     types = []
-    types << 'indoor bouldering' if indoor_bouldering?
-    types << 'indoor sport climbing' if indoor_sport_climbing?
-    types << 'indoor top roping' if indoor_top_roping?
-    types << 'outdoor bouldering' if outdoor_bouldering?
-    types << 'outdoor sport climbing' if outdoor_sport_climbing?
-    types << 'outdoor trad climbing' if outdoor_trad_climbing?
+    types << 'indoor bouldering' if bouldering
+    types << 'indoor sport climbing' if sport_climbing
+    types << 'indoor top roping' if top_roping
+    types << 'outdoor bouldering' if alpine_bouldering
+    types << 'outdoor sport climbing' if self.outdoor_sport_climbing
+    types << 'outdoor trad climbing' if self.outdoor_trad_climbing
     types.join(', ')
   end
 end
