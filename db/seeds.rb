@@ -29,12 +29,22 @@ person4 = User.create!(email: "usman@gmail.com", password: "123456", first_name:
 person4.photo.attach(io: file_4, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
-file_4 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654702597/Belay_Buddies/phelim1_nbbta9.png")
-person4 = User.create!(email: "phelim@gmail.com", password: "123456", first_name: "Phelim", last_name: "Dunleavy", gender: "male", level: "advanced", age: 28, location: "Hoxton, London", outdoor_trad_climbing:true, outdoor_sport_climbing:true)
-person4.photo.attach(io: file_4, filename:"nes.png", content_type: "image/png")
+file_5 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654702597/Belay_Buddies/phelim1_nbbta9.png")
+person5 = User.create!(email: "phelim@gmail.com", password: "123456", first_name: "Phelim", last_name: "Dunleavy", gender: "male", level: "advanced", age: 28, location: "Hoxton, London", outdoor_trad_climbing:true, outdoor_sport_climbing:true)
+person5.photo.attach(io: file_5, filename:"nes.png", content_type: "image/png")
 p "new user created"
 
-file_5 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654704515/Belay_Buddies/Louis_rmm3mf.png")
-person5 = User.create!(email: "louis@gmail.com", password: "123456", first_name: "Louis", last_name: "Leslie", gender: "male", level: "advanced intermediate", age: 25, location: "Hoxton, London", indoor_top_roping:true, outdoor_sport_climbing:true)
-person5.photo.attach(io: file_5, filename:"nes.jpg", content_type: "image/jpg")
+file_6 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654704515/Belay_Buddies/Louis_rmm3mf.png")
+person6 = User.create!(email: "louis@gmail.com", password: "123456", first_name: "Louis", last_name: "Leslie", gender: "male", level: "advanced intermediate", age: 25, location: "Hoxton, London", indoor_top_roping:true, outdoor_sport_climbing:true)
+person6.photo.attach(io: file_6, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
+
+Review.create!(description:"Advanced climber who will help you improve your bouldering technique.", rating: 5, user: person4, author: person1)
+
+Review.create!(description:"He's too advanced for me..!", rating: 3, user: person4, author: person6)
+
+Review.create!(description:"Can't climb well but friendly :)", rating: 5, user: person1, author: person4)
+
+Review.create!(description:"Very strong clibmer for his age.", rating: 5, user: person3, author: person1)
+
+Review.create!(description:"Fun to go climbing with!", rating: 5, user: person2, author: person1)

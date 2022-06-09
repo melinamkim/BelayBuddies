@@ -2,7 +2,7 @@
   <div class="row justify-content-center" id="name">
     <div class="col-6">
       <h1 class="heading text-primary fw-bolder text-center"><%= @user.full_name %></h1>
-      <img src="https://images.unsplash.com/photo-1610768798760-e01a4b43814e?ixlib=rb-1.2.1&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&q=80" alt="">
+      <%= cl_image_tag @user.photo.key, class:"w-100" %>
       <ul class="list-group fs-5 show-ul">
         <li class="list-group-item"> Age: <%= @user.age %><%= " "%><%= @user.gender == "male" ? '<i class="fa-solid fa-mars"></i>'.html_safe : '<i class="fa-solid fa-venus"></i>'.html_safe %></li>
         <li class="list-group-item">Level: <%= @user.level %></li>
@@ -18,7 +18,7 @@
       <p class="fs-5"><%= link_to "Back to Climbers", users_path, class: "btn btn-warning btn-lg" %></p>
     </div>
 
-  <div class="col-6 fs-5">
+  <div class="col-6 fs-5 pt-5">
   <% if @user.reviews.empty? %>
     <small><em class="text-muted">Be the first one to review this climber</em></small>
   <% end %>
