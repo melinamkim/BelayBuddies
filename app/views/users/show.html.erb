@@ -10,7 +10,7 @@
         <li class="list-group-item">🧗 <%= @user.types_of_climbing %></li>
       </ul>
       <br>
-      <p class="fs-5"><%= link_to "Back to climbers", users_path, class: "btn btn-warning btn-lg" %></p>
+      <p class="fs-5"><%= link_to "Back to Climbers", users_path, class: "btn btn-warning btn-lg" %></p>
     </div>
 
   <div class="col-6 fs-5">
@@ -20,15 +20,15 @@
 
 
       <div class="bg-white rounded p-3">
-        <h5 class="text-center">⭐ Review this Climber ⭐</h5>
+        <h5 class="text-center fs-3">⭐ Review this Climber ⭐</h5>
         <%= simple_form_for [@user, @review] do |f| %>
           <%= f.input :description, placeholder: "Add your review here..." %>
           <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "Select your rating", input_html: { data: { controller: "jquery-bar-rating" } } %>
-          <%= f.submit class:"btn btn-flat" %>
+          <%= f.submit class:"btn btn-warning" %>
         <% end %>
       </div>
 
-<h3>Reviews:</h3>
+<h3>Previous Reviews:</h3>
 <% @user.reviews.each do |review| %>
   <p><%= review.description %></p> <%= '<i class="fas fa-star star-yellow"></i>'.html_safe * review.rating %>
 <% end %>
