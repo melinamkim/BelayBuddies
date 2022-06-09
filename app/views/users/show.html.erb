@@ -1,7 +1,7 @@
 <div class="container d-flex mt-5">
   <div class="row justify-content-center" id="name">
     <div class="col-6">
-      <h1 class="heading text-primary fw-bolder text-center"><%= @user.full_name %></h1>
+      <h1 class="heading text-warning fw-bolder text-center mt-5"><%= @user.full_name %></h1>
       <%= cl_image_tag @user.photo.key, class:"w-100" %>
       <ul class="list-group fs-5 show-ul">
         <li class="list-group-item"> Age: <%= @user.age %><%= " "%><%= @user.gender == "male" ? '<i class="fa-solid fa-mars"></i>'.html_safe : '<i class="fa-solid fa-venus"></i>'.html_safe %></li>
@@ -28,11 +28,12 @@
         <% end %>
       </div>
 
-<h3 mt-5>Previous Reviews:</h3>
+<div class="bg-white rounded p-3">
+<h3 class=mt-5>Previous Reviews:</h3>
 <% @user.reviews.each do |review| %>
-  <p><%= review.description %></p> <%= '<i class="fas fa-star star-yellow"></i>'.html_safe * review.rating %>
+  <p><%= review.description %></p><%='<i class="fas fa-star star-yellow"></i>'.html_safe * review.rating %>
 <% end %>
-<br>
+</div>
 
 </div>
 </div>
