@@ -10,6 +10,15 @@
         <li class="list-group-item">📍 <%= @user.location %></li>
         <li class="list-group-item">🧗 <%= @user.types_of_climbing %></li>
       </ul>
+      <% chatroom = Chatroom.where(receiver: @user, requester: current_user).first || Chatroom.where(receiver: current_user, requester: @user).first %>
+      <% if chatroom %>
+        <%= link_to 'Go to chat', chatroom_path(chatroom), class: "btn btn-primary" %>
+      <% else %>
+        <%= simple_form_for [@user, @chatroom] do |f| %>
+          <%= f.input :receiver_id, as: :hidden, input_html: { value: @user.id } %>
+          <%= f.submit 'Send Message' %>
+        <% end %>
+      <% end %>
       </div>
       <br>
       <p class="fs-5"><%= link_to "Back to Climbers", users_path, class: "btn btn-warning btn-lg" %></p>
