@@ -7,8 +7,8 @@
                 <%= cl_image_tag user.photo.key %>
                  <h2 class="user-name"><%= user.full_name %></h2>
                 <div class="card-user-infos">
+                   <p>📍<%= user.location %></p>
                     <p><%= user.types_of_climbing %></p>
-                   <p class="locationcolor">📍<%= user.location %></p>
                 </div>
               </div>
             <% end %>
