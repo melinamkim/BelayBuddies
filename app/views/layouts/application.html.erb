@@ -13,9 +13,10 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-
+  <body>
+    <%= render "shared/navbar" %>
+    <div style="height: 65px"> </div>
+    <%= render "shared/flashes" %>
     <%= yield %>
   </body>
 </html>

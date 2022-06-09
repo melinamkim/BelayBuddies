@@ -1,0 +1,4 @@
+<% @chatrooms.each do |chatroom| %>
+<% participant = chatroom.requester == current_user ? chatroom.receiver : chatroom.requester %>
+<%= link_to participant.full_name, chatroom_path(chatroom) %>
+<% end %>
