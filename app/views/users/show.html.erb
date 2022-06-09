@@ -10,6 +10,10 @@
         <li class="list-group-item">📍 <%= @user.location %></li>
         <li class="list-group-item">🧗 <%= @user.types_of_climbing %></li>
       </ul>
+            <%= simple_form_for [@user, @chatroom] do |f| %>
+        <%= f.input :receiver_id, as: :hidden, input_html: { value: @user.id } %>
+        <%= f.submit 'Send Message' %>
+      <% end %>
       </div>
       <br>
       <p class="fs-5"><%= link_to "Back to Climbers", users_path, class: "btn btn-warning btn-lg" %></p>
