@@ -2,10 +2,9 @@
     <h1 class="heading text-warning fw-bolder">🧗 <strong> Climbing Buddies Matches </strong> 🧗</h1>
     <div class="cards">
         <% @users.each do |user| %>
-
             <%= link_to user_path(user) do %>
               <div class="card-trip">
-                <%= cl_image_tag user.photo.key %>
+                <img src="https://images.unsplash.com/photo-1610768798760-e01a4b43814e?ixlib=rb-1.2.1&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&q=80" alt="">
                 <div class="card-trip-infos">
                   <div>
                     <span><%= user.full_name %></span>
