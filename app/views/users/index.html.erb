@@ -4,8 +4,7 @@
         <% @users.each do |user| %>
             <%= link_to user_path(user) do %>
               <div class="card-trip">
-                      <%= cl_image_tag user.photo.key %>
-
+                <%= cl_image_tag user.photo.key %>
                 <div class="card-trip-infos">
                   <div>
                     <span><%= user.full_name %></span>
