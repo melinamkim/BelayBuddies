@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     # filters
     @users = @users.where("gender = ?", params[:gender]) if params[:gender].present? && params[:gender] != ""
     @users = @users.where("level = ?", params[:level]) if params[:level].present? && params[:level] != ""
-    @users = @users.where("types_of_climbing = ?", params[:type_of_climbing]) if params[:type_of_climbing].present? && params[:type_of_climbing] != ""
+    @users = @users.where("indoor_sport_climbing = ?", params[:indoor_sport_climbing]) if params[:indoor_sport_climbing].present? && params[:type_of_climbing] != ""
 
     @markers = @users.geocoded.map do |user|
       {
