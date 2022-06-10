@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   resources :availabilities, only: %i[new create]
 
   resources :chatrooms, only: %i[show index] do
-  resources :messages, only: %i[new create]
+    resources :messages, only: %i[new create]
   end
 end

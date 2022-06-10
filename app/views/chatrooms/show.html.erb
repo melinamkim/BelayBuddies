@@ -1,6 +1,6 @@
 
 <div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-<% participant = @chatroom.requester == current_user ? @chatroom.receiver : @chatroom.requester.full_name %>
+<% participant = @chatroom.requester == current_user ? @chatroom.receiver : @chatroom.requester %>
   <h3><%= participant.full_name %></h3>
 
   <div class="messages" data-chatroom-subscription-target="messages">
