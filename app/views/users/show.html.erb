@@ -1,3 +1,4 @@
+
 <div class="container d-flex">
   <div class="row justify-content-center" id="name">
     <div class="col-6 pt-5">
@@ -39,12 +40,9 @@
         <% end %>
       </div>
 
-<div class="bg-white rounded p-3">
+<div class="bg-white rounded p-3", id="user-review-box">
 <h3 class=mt-5>Previous Reviews:</h3>
 <% @user.reviews.each do |review| %>
   <p><%= review.description %></p><%='<i class="fas fa-star star-yellow"></i>'.html_safe * review.rating %>
 <% end %>
-</div>
-
-</div>
 </div>
