@@ -27,7 +27,7 @@ class User < ApplicationRecord
     types << 'Outdoor Bouldering' if outdoor_bouldering?
     types << 'Outdoor Sport Climbing' if outdoor_sport_climbing?
     types << 'Outdoor Trad Climbing' if outdoor_trad_climbing?
-    types.join(', ')
+    types
   end
 
 end
