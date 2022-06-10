@@ -1,6 +1,11 @@
-<% @chatrooms.each do |chatroom| %>
-<% participant = chatroom.requester == current_user ? chatroom.receiver : chatroom.requester %>
-<%= link_to participant.full_name, chatroom_path(chatroom) %>
-<% end %>
 
-<% %>
+
+  <% @chatrooms.each do |chatroom| %>
+    <div class="inbox-chats">
+      <div class="inbox-user">
+        <% participant = chatroom.requester == current_user ? chatroom.receiver : chatroom.requester %>
+        <h3> My chat with:
+        <span> <%= link_to participant.full_name, chatroom_path(chatroom) %> </span> </h3>
+      </div>
+    </div>
+  <% end %>
