@@ -2,6 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :reviews
+  has_many :chatrooms
   has_many :messages # maybe we dont need this?
   has_many :availabilities
   devise :database_authenticatable, :registerable,
@@ -20,13 +21,13 @@ class User < ApplicationRecord
 
   def types_of_climbing
     types = []
-    types << 'indoor bouldering' if indoor_bouldering?
-    types << 'indoor sport climbing' if indoor_sport_climbing?
-    types << 'indoor top roping' if indoor_top_roping?
-    types << 'outdoor bouldering' if outdoor_bouldering?
-    types << 'outdoor sport climbing' if outdoor_sport_climbing?
-    types << 'outdoor trad climbing' if outdoor_trad_climbing?
-    types.join(', ')
+    types << 'Indoor Bouldering' if indoor_bouldering?
+    types << 'Indoor Sport Climbing' if indoor_sport_climbing?
+    types << 'Indoor Top Roping' if indoor_top_roping?
+    types << 'Outdoor Bouldering' if outdoor_bouldering?
+    types << 'Outdoor Sport Climbing' if outdoor_sport_climbing?
+    types << 'Outdoor Trad Climbing' if outdoor_trad_climbing?
+    types
   end
 
 end

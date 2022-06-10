@@ -8,11 +8,12 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[index show] do
     resources :reviews, only: %i[new create]
+    resources :chatrooms, only: %i[create]
   end
 
   resources :availabilities, only: %i[new create]
 
-  resources :chatrooms, only: %i[create show] do
-    resources :messages, only: %i[new create]
+  resources :chatrooms, only: %i[show index] do
+  resources :messages, only: %i[new create]
   end
 end
