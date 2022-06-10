@@ -26,9 +26,28 @@
   </div>
 </div>
 
-<div class="wrapper text-center">
-  <h1>Recently Joined Climbers</h1>
-</div>
+  <div class="box-container text-center">
+    <h1 class="heading text-primary fw-bolder">🧗‍♀️ Recently Joined Climbers 🧗🏽‍♂️</h1>
+    <div class="cards">
+        <% @users.each do |user| %>
+          <% if user.photo.attached?%>
+            <%= link_to user_path(user) do %>
+              <div class="card-user">
+                <%= cl_image_tag user.photo.key, height: 300, width: 500, crop: :fill %>
+                <div class="card-user-infos">
+                  <div>
+                    <span><%= user.first_name %> <%= user.last_name %></span>
+                    <br>
+                    📍 <span class="locationcolor"><%= user.location %></span>
+                    <br>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
 
 <div class="wrapper text-center">
   <h1>Nearest Climbing Gyms</h1>
