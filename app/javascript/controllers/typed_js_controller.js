@@ -8,6 +8,7 @@ export default class extends Controller {
       strings: ["Find a climbing partner", "that fits around your schedule"],
       typeSpeed: 100,
       loop: true
+      
     })
   }
 }

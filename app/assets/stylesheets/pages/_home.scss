@@ -18,11 +18,22 @@
 
 .banner p {
   font-size: 34px;
-  color: whitesmoke;
+  color: #000400;
   opacity: 1;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-family: Roboto;
   font-weight: bold;
+}
+
+.round {
+  width: 100%;
+  border-radius: 15px;
+  border: 1px #000 solid;
+  padding: 5px 5px 5px 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
 }
 
 // .searchbar{
@@ -68,4 +79,3 @@
 //   color:white;
 //   text-decoration:none;
 //   }
-

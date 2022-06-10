@@ -1,6 +1,5 @@
 <div class="banner" style="background-image: url(<%= asset_path('stroghold_2.jpeg') %>)">
   <div class="container text-center">
-    <%# <h1>🅱️elay 🅱️uddies</h1> %>
     <br>
       <p><span data-controller="typed-js"></span></p>
 
@@ -18,17 +17,17 @@
       <div class="col-12">
         <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
         <div class="input-group">
-          <div class="input-group-text fs-4">📍</div>
-          <input type="text" class="form-control fs-5" id="inlineFormInputGroupUsername" placeholder="Find Belay Buddies!" name='location'>
+          <input type="text" class="form-control fs-5 round" id="inlineFormInputGroupUsername" placeholder="Find Belay Buddies in London" name='location'>
        </div>
-        <input type="submit">
+       <br>
+        <input type="submit" value="Find me Buddies">
       </div>
     </form>
   </div>
 </div>
 
   <div class="box-container text-center">
-    <h1 class="heading text-primary fw-bolder">🧗‍♀️ Recently Joined Climbers 🧗🏽‍♂️</h1>
+    <h1 class="heading text-primary fw-bolder">🧗‍♀️ Recent Buddies 🧗🏽‍♂️</h1>
     <div class="cards">
         <% @users.each do |user| %>
           <% if user.photo.attached?%>
