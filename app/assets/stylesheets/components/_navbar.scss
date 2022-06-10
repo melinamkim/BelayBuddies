@@ -12,9 +12,13 @@
 }
 
 .navbar-lewagon {
-  background-color: rgb(255, 255, 255);
+  background-color: #ffdb00;
 }
 
 .navbar .avatar {
   max-height: 40px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #fd1f18;
 }
