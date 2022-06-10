@@ -1,5 +1,5 @@
     <div class="container">
-    <h1 class="heading text-danger fw-bolder text-center"><strong> Filter Your Matches </strong></h1>
+    <h1 class="heading text-warning fw-bolder text-center"><strong> Filter Your Matches </strong></h1>
     <%= form_tag users_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :location, params[:location], value:params[:location], class: "form-control fs-5", placeholder: "Enter Location"%>
       <%= select_tag "gender", options_for_select(["male", "female"]), class: "form-control fs-5", prompt:"Select Gender"%>
@@ -20,7 +20,7 @@
     <% end %>
 
 
-    <h1 class="heading text-danger fw-bolder text-center">🧍‍♂️<strong> Climbing Buddies Matches </strong>🧍‍♀️</h1>
+    <h1 class="heading text-warning fw-bolder text-center">🧍‍♂️<strong> Climbing Buddies Matches </strong>🧍‍♀️</h1>
     <div class="cards text-center">
         <% @users.each do |user| %>
           <div class="position-relative">
@@ -51,7 +51,7 @@
         <% end %>
     </div>
 
-    <h1 class="heading text-warning fw-bolder text-center text-danger">📍 <strong> Map of Your Matches </strong> 🌎</h1>
+    <h1 class="heading text-warning fw-bolder text-center text-warning">📍 <strong> Map of Your Matches </strong> 🌎</h1>
     <div style="width: 100%; height: 600px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
