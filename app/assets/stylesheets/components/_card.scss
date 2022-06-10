@@ -63,11 +63,13 @@
 .card-user {
   height: 500px;
   width: 300px;
-  background-color: #ffdb00;
+  margin: 0 auto;
+  background-color: black;
   border-radius: 20px;
   position: relative;
   box-shadow: 0 0 18px 0 #809eb1;
-  margin: 0 auto;
+  padding-top: 15px;
+  padding-bottom: 60px;
     img {
       height: 55%;
       display: block;
@@ -77,21 +79,28 @@
       padding: 8px;
       width: 80%;
       border-radius: 100%;
-      padding: 20px;
+      padding: 10px;
       box-shadow: 0 0 0 1px rgb(27, 163, 243);
     }
   }
 
+.card-btn {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+}
+
 .card-user-infos {
     padding: 8px;
     color: whitesmoke;
-    margin-top: 50px;
+    margin-top: 10px;
+    p {
+      // height: 48px;
+    }
    }
 
 .user-name {
-  position: absolute;
-  top: 250px;
-  left: 10px;
   color: whitesmoke
   }
 
@@ -111,6 +120,7 @@
   font-size: 21px;
   opacity: .7;
   margin: 0;
+
 }
 
 .card-trip-infos .card-trip-user {
