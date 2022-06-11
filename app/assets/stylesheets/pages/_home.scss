@@ -3,13 +3,14 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 400px
+  padding: 350px;
+  height: 100vh;
 }
 
 .banner h1 {
   margin: 0;
   color: orangered;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px #16153f(0,0,0,0.2);
   font-size: 64px;
   font-weight: bold;
   font-family: IBM Plex Sans;
@@ -18,9 +19,9 @@
 
 .banner p {
   font-size: 42px;
-  color: #000400;
+  color: #f63c02;
   opacity: 1;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px #16153f(0,0,0,0.2);
   font-family: Roboto;
   font-weight: bold;
 }
