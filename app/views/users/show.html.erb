@@ -1,5 +1,5 @@
 
-<div class="container d-flex">
+<div class="container">
   <div class="row justify-content-center" id="name">
     <div class="col-6 pt-5">
     <div class="bg-white rounded p-3">
@@ -30,7 +30,6 @@
     <small><em class="text-muted">Be the first one to review this climber</em></small>
   <% end %>
 
-
       <div class="bg-white rounded p-3">
         <h5 class="text-center fs-3 fw-bolder">⭐ Review this Climber ⭐</h5>
         <%= simple_form_for [@user, @review] do |f| %>
@@ -40,13 +39,16 @@
         <% end %>
       </div>
 
-<div class="bg-white rounded p-3", id="user-review-box">
-<h3 class=mt-5>Previous Reviews:</h3>
-<% @user.reviews.each do |review| %>
-  <p><%= review.description %></p><%='<i class="fas fa-star star-yellow"></i>'.html_safe * review.rating %>
-<% end %>
+  <div class="bg-white rounded p-3", id="user-review-box">
+  <h3 class=mt-5>Previous Reviews:</h3>
+  <% @user.reviews.each do |review| %>
+    <p><%= review.description %></p><%='<i class="fas fa-star star-yellow"></i>'.html_safe * review.rating %>
+  <% end %>
+  </div>
+  <div style="width: 100%; height: 600px; margin: auto;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
-<div style="width: 100%; height: 600px; margin: auto;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+</div>
+</div>

@@ -1,3 +1,4 @@
+
     <div class="container">
     <h1 class="heading fw-bolder text-center"><strong> Filter Your Matches </strong></h1>
     <%= form_tag users_path, method: :get, class: "d-flex" do %>
@@ -56,3 +57,4 @@
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+</div>
