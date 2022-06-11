@@ -64,10 +64,10 @@
   height: 500px;
   width: 300px;
   margin: 0 auto;
-  background-color: white;
+  background-image: linear-gradient(to bottom, #fbfaf9, #ffe8c7, #ffd695, #ffc661, #fcb61e);
   border-radius: 20px;
   position: relative;
-  box-shadow: 0 0 18px 0 rgb(255, 119, 0);
+  box-shadow: 0 0 10px 0 rgb(245, 112, 3);
   padding-top: 15px;
   padding-bottom: 60px;
     img {
@@ -79,7 +79,7 @@
       // padding: 8px;
       width: 80%;
       border-radius: 100%;
-      box-shadow: 0 0 10px 2px red;
+      box-shadow: 0 0 10px 2px #F63C02;
     }
   }
 
@@ -130,5 +130,10 @@
 }
 
 body {
-  background-color: #040a2d;
+  background-color: #16153F;
+  color: white;
+}
+
+header {
+  color: red;
 }
