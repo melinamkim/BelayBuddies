@@ -27,28 +27,37 @@
 </div>
 
   <div class="box-container text-center">
-    <h1 class="heading text-primary fw-bolder">🧗‍♀️ Recent Buddies 🧗🏽‍♂️</h1>
-    <div class="cards">
+    <h1 class="heading fw-bolder mt-4 mb-4">🧗‍♀️ Recently Joined Buddies 🧗🏽‍♂️</h1>
+    <div class="cards text-center">
         <% @users.each do |user| %>
-          <% if user.photo.attached?%>
+          <div class="position-relative">
             <%= link_to user_path(user) do %>
               <div class="card-user">
-                <%= cl_image_tag user.photo.key, height: 300, width: 500, crop: :fill %>
+                <%= cl_image_tag user.photo.key %>
+                <h2 class="user-name mt-3 fw-bolder"><%= user.full_name %></h2>
                 <div class="card-user-infos">
-                  <div>
-                    <span><%= user.first_name %> <%= user.last_name %></span>
-                    <br>
-                    📍 <span class="locationcolor"><%= user.location %></span>
-                    <br>
-                  </div>
+                  <p>📍<%= user.location %></p>
+                    <% user.types_of_climbing.each do |type_of_climbing| %>
+                    <p class="mb-0"><%= type_of_climbing %></p>
+                    <% end %>
                 </div>
               </div>
             <% end %>
-          <% end %>
+            <div class="d-flex justify-content-center align-items-center card-btn p-0 fw-bolder">
+              <% chatroom = Chatroom.where(receiver: user, requester: current_user).first || Chatroom.where(receiver: current_user, requester: user).first %>
+              <% if chatroom %>
+                <%= link_to 'Chat', chatroom_path(chatroom), class: "btn" %>
+              <% else %>
+                <%= simple_form_for [user, Chatroom.new] do |f| %>
+                  <%= f.input :receiver_id, as: :hidden, input_html: { value: user.id } %>
+                  <%= f.submit 'Chat', class: 'btn btn-lg' %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
         <% end %>
     </div>
   </div>
-
 <div class="wrapper text-center">
   <h1>Nearest Climbing Gyms</h1>
 </div>

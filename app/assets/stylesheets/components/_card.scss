@@ -83,6 +83,10 @@
     }
   }
 
+.card-user .user-name {
+  color: #16153f;
+}
+
 .card-btn {
   position: absolute;
   bottom: 16px;
@@ -142,6 +146,7 @@ body {
 .btn {
   background-image: linear-gradient(to left top, #16153f, #2a2a68, #404095, #5658c4, #6c71f6);
   color: white;
+  border-radius: 10px;
   &:hover {
     background-image: linear-gradient(to left top, #89efe7, #91edc6, #ace7a0, #d0dc7f, #f6cc6c);
     transform: scale(1.05);
