@@ -27,7 +27,7 @@
             <%= link_to user_path(user) do %>
               <div class="card-user">
                 <%= cl_image_tag user.photo.key %>
-                <h2 class="user-name mt-2"><%= user.full_name %></h2>
+                <h2 class="user-name mt-3 fw-bolder"><%= user.full_name %></h2>
                 <div class="card-user-infos">
                   <p>📍<%= user.location %></p>
                     <% user.types_of_climbing.each do |type_of_climbing| %>
@@ -43,7 +43,7 @@
               <% else %>
                 <%= simple_form_for [user, Chatroom.new] do |f| %>
                   <%= f.input :receiver_id, as: :hidden, input_html: { value: user.id } %>
-                  <%= f.submit 'Chat', class: 'btn' %>
+                  <%= f.submit 'Chat', class: 'btn btn-lg' %>
                 <% end %>
               <% end %>
             </div>

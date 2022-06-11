@@ -18,12 +18,15 @@
 }
 
 .banner p {
-  font-size: 42px;
-  color: #f63c02;
-  opacity: 1;
+  font-size: 45px;
+  // color: #f63c02;
+  background-image: linear-gradient(to right, #f57b09, #d69400, #aea900, #7ab900, #0dc63b);
+  opacity: 0.9;
   text-shadow: 1px 1px 3px #16153f(0,0,0,0.2);
   font-family: Roboto;
   font-weight: bold;
+  border-radius: 20px;
+  padding: 10px;
 }
 
 .round {
@@ -37,6 +40,9 @@
   z-index: 5;
 }
 
+.heading {
+  color: #F63C02;
+}
 // .searchbar{
 //   margin-bottom: auto;
 //   margin-top: auto;
