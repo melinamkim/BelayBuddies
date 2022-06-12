@@ -3,16 +3,6 @@
     <br>
       <p>Find a climbing <span data-controller="typed-js"></span></p>
 
-    <%# <div class="container h-100">
-      <div class="d-flex justify-content-center h-100">
-        <div class="searchbar">
-          <input class="search_input" type="text" name="" placeholder="Look for Buddies...">
-          <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-        </div>
-      </div>
-    </div> %>
-
-
     <form action='/users' class="align-items-center" id="searchbar">
       <div class="col-12">
         <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
@@ -23,6 +13,49 @@
         <input type="submit" value="Let's Go!">
       </div>
     </form>
+  </div>
+</div>
+
+<div class="homepage-grid">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>How it works</h1>
+      </div>
+      <div class="row align-content-center">
+        <div class="col text-center">
+          <h1>1</h1>
+        </div>
+        <div class="col-4 d-flex align-items-center">
+          <h3>Find climbers in your area or city</h3>
+        </div>
+        <div class="col d-flex align-items-center">
+          <%= image_tag('strong_woman') %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <h1>2</h1>
+        </div>
+        <div class="col-4 d-flex align-items-center">
+          <h3>Send them a message and wait for their response</h3>
+        </div>
+        <div class="col d-flex align-items-center">
+          <%= image_tag('castle_climbing') %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <h1>3</h1>
+        </div>
+        <div class="col-4 d-flex align-items-center">
+          <h3>Meet up with them and climb indoors or outdoors! It's up to you 😀</h3>
+        </div>
+        <div class="col d-flex align-items-center">
+          <%= image_tag('happy_climbing_couple_2.jpeg') %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -58,10 +91,16 @@
         <% end %>
     </div>
   </div>
-<div class="wrapper text-center">
-  <h1>Nearest Climbing Gyms</h1>
-</div>
 
 <div class="wrapper text-center">
   <h1>Check out what's happening in the climbing world!</h1>
 </div>
+
+    <%# <div class="container h-100">
+      <div class="d-flex justify-content-center h-100">
+        <div class="searchbar">
+          <input class="search_input" type="text" name="" placeholder="Look for Buddies...">
+          <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </div> %>
