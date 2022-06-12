@@ -21,43 +21,14 @@
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr, 1fr;
-  grid-gap: 18px;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-gap: 16px;
+  flex-grow: 1;
+  padding: 0 16px;
 }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
+.main-container {
+  display: flex;
 }
 
 .card-user {
@@ -83,7 +54,7 @@
     }
   }
 
-.card-user .user-name {
+  .card-user .user-name {
   color: #16153f;
 }
 
@@ -95,14 +66,14 @@
 }
 
 .card-user-infos {
-    padding: 8px;
-    color: black;
-    margin-top: 10px;
-   }
+  padding: 8px;
+  color: black;
+  margin-top: 10px;
+}
 
 .user-name {
   color: black;
-  }
+}
 
 .card-trip > img {
   height: 300px;
@@ -153,3 +124,38 @@ body {
     border-radius: 10px;
   }
 }
+
+  // Smallest device
+  @media (min-width: 100px) and (max-width: 575px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    .cards {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
+
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    .cards {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
