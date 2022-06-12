@@ -35,12 +35,13 @@
   .image-container {
     width: 500px;
     height: 500px;
-    box-shadow: inset 0px 0px 16px 16px #16153f;
+    // box-shadow: inset 0px 0px 16px 16px #16153f;
   }
 
   img {
-    width: 500px;
-    height: 500px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
     position: relative;
     z-index: -10;
   }

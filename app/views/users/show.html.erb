@@ -1,12 +1,13 @@
-<div class="container">
-  <div class="users-show">
+<div class="users-show">
+  <div class="container">
     <div class="row">
-      <div class="col">
-      </div>
       <div class="col-4 user-info">
         <div class="row">
-          <h1><%= @user.full_name.upcase %></h1>
-        </div>
+         <div class="col-4 text-center">
+        <%= cl_image_tag @user.photo.key %>
+      </div>
+    </div>
+          <h2>Hi! I'm <%= @user.full_name.titleize %></h2>
         <div class="row my-3">
           <div class="col-6">
             <p><%= @user.gender == "male" ? '<i class="fa-solid fa-mars"></i>'.html_safe : '<i class="fa-solid fa-venus"></i>'.html_safe %><%= " "%><%= @user.age %></p>
@@ -23,22 +24,18 @@
             <p><i class="fa-solid fa-mountain"></i><%=" "%><%= @user.types_of_climbing %></p>
           </div>
              <div class="row my-3">
-<% chatroom = Chatroom.where(receiver: @user, requester: current_user).first || Chatroom.where(receiver: current_user, requester: @user).first %>
-      <% if chatroom %>
-        <%= link_to 'Send a Message', chatroom_path(chatroom), class: "btn btn-lg btn-primary" %>
-      <% else %>
-        <%= simple_form_for [@user, @chatroom] do |f| %>
-          <%= f.input :receiver_id, as: :hidden, input_html: { value: @user.id } %>
-          <%= f.submit 'Send Message' %>
-        <% end %>
-      <% end %>
-      </div>
+                <% chatroom = Chatroom.where(receiver: @user, requester: current_user).first || Chatroom.where(receiver: current_user, requester: @user).first %>
+                <% if chatroom %>
+                <%= link_to 'Message', chatroom_path(chatroom), class: "btn btn-lg btn-primary" %>
+                <% else %>
+               <%= simple_form_for [@user, @chatroom] do |f| %>
+                <%= f.input :receiver_id, as: :hidden, input_html: { value: @user.id } %>
+                <%= f.submit 'Send Message' %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
-      <div class="col-4 text-center">
-        <div class="image-container">
-          <%= cl_image_tag @user.photo.key %>
-        </div>
 
       </div>
           <div class="row my-3">
@@ -58,19 +55,21 @@
       </div>
 
 <div class="", id="user-review-box">
-<h3 class="text-center fs-2 fw-bolder mt-5 text-light">Previous Reviews</h3>
-<% @user.reviews.each do |review| %>
-  <p><%= review.description %></p><%='<i class="fas fa-star star-yellow"></i>'.html_safe * review.rating %>
-<% end %>
+  <h3 class="text-center fs-2 fw-bolder mt-5 text-light">Previous Reviews</h3>
+    <% @user.reviews.each do |review| %>
+      <p><%= review.description %></p><%='<i class="fas fa-star star-yellow"></i>'.html_safe * review.rating %>
+    <% end %>
+  </div>
 </div>
-</div>
-      <div class="col-4 text-center">
-<div id="map" style="width: 100%; height: 600px; margin: auto;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-</div>
-</div>
+
+    <div class="col-4 text-center">
+      <div id="map" style="width: 100%; height: 600px; margin: auto;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </div>
 </div>
 
 

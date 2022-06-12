@@ -43,11 +43,11 @@
             <div class="d-flex justify-content-center align-items-center card-btn p-0 fw-bolder">
               <% chatroom = Chatroom.where(receiver: user, requester: current_user).first || Chatroom.where(receiver: current_user, requester: user).first %>
               <% if chatroom %>
-                <%= link_to 'Chat', chatroom_path(chatroom), class: "btn" %>
+                <%= link_to 'Message', chatroom_path(chatroom), class: "btn" %>
               <% else %>
                 <%= simple_form_for [user, Chatroom.new] do |f| %>
                   <%= f.input :receiver_id, as: :hidden, input_html: { value: user.id } %>
-                  <%= f.submit 'Chat', class: 'btn btn-lg' %>
+                  <%= f.submit 'Message', class: 'btn' %>
                 <% end %>
               <% end %>
             </div>
