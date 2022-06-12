@@ -1,12 +1,13 @@
 <div class="users-show">
   <div class="container">
-    <div class="row">
-      <div class="col">
-      </div>
-      <div class="col-4 user-info">
-        <div class="row">
-          <h1><%= @user.full_name.upcase %></h1>
+    <div class="row my-3">
+        <div class="col-6 text-center">
+          <%= cl_image_tag @user.photo.key %>
         </div>
+      <div class="col-6 text-center user-info">
+        <div class="row">
+    </div>
+          <h1>Hi, I'm <%= @user.first_name.titleize %></h1>
         <div class="row my-3">
           <div class="col-6">
             <p><%= @user.gender == "male" ? '<i class="fa-solid fa-mars"></i>'.html_safe : '<i class="fa-solid fa-venus"></i>'.html_safe %><%= " "%><%= @user.age %></p>
@@ -23,26 +24,22 @@
             <p><i class="fa-solid fa-mountain"></i><%=" "%><%= @user.types_of_climbing %></p>
           </div>
              <div class="row my-3">
-<% chatroom = Chatroom.where(receiver: @user, requester: current_user).first || Chatroom.where(receiver: current_user, requester: @user).first %>
-      <% if chatroom %>
-        <%= link_to 'Send a Message', chatroom_path(chatroom), class: "btn btn-lg btn-primary" %>
-      <% else %>
-        <%= simple_form_for [@user, @chatroom] do |f| %>
-          <%= f.input :receiver_id, as: :hidden, input_html: { value: @user.id } %>
-          <%= f.submit 'Send Message' %>
-        <% end %>
-      <% end %>
-      </div>
+                <% chatroom = Chatroom.where(receiver: @user, requester: current_user).first || Chatroom.where(receiver: current_user, requester: @user).first %>
+                <% if chatroom %>
+                <%= link_to 'Message', chatroom_path(chatroom), class: "btn btn-lg btn-primary" %>
+                <% else %>
+               <%= simple_form_for [@user, @chatroom] do |f| %>
+                <%= f.input :receiver_id, as: :hidden, input_html: { value: @user.id } %>
+                <%= f.submit 'Send Message' %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
-      <div class="col-4 text-center">
-        <div class="image-container">
-          <%= cl_image_tag @user.photo.key %>
-        </div>
 
       </div>
           <div class="row my-3">
-          <div class="col-6">
+          <div class="col-6 text-center">
   <% if @user.reviews.empty? %>
     <small><em class="text-muted">Be the first one to review this climber</em></small>
   <% end %>
@@ -58,71 +55,22 @@
       </div>
 
 <div class="", id="user-review-box">
-<h3 class="text-center fs-2 fw-bolder mt-5 text-light">Previous Reviews</h3>
-<% @user.reviews.each do |review| %>
-  <p><%= review.description %></p><%='<i class="fas fa-star star-yellow"></i>'.html_safe * review.rating %>
-<% end %>
-</div>
-</div>
-      <div class="col-4 text-center">
-<div style="width: 100%; height: 600px; margin: auto;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-</div>
-</div>
+  <h3 class="text-center fs-2 fw-bolder mt-5 text-light">Previous Reviews</h3>
+    <% @user.reviews.each do |review| %>
+      <p><%= review.description %></p><%='<i class="fas fa-star star-yellow"></i>'.html_safe * review.rating %>
+    <% end %>
+  </div>
 </div>
 
-
-
-<div class="container d-flex">
-  <div class="row justify-content-center" id="name">
-    <div class="col-6 pt-5">
-    <div class="bg-white rounded p-3">
-      <h1 class="heading text-warning fw-bolder text-center"><%= @user.full_name %></h1>
-      <%= cl_image_tag @user.photo.key, class:"w-100" %>
-      <ul class="list-group fs-5 show-ul text-center">
-        <li class="list-group-item"> Age: <%= @user.age %><%= " "%><%= @user.gender == "male" ? '<i class="fa-solid fa-mars"></i>'.html_safe : '<i class="fa-solid fa-venus"></i>'.html_safe %></li>
-        <li class="list-group-item">📊 <%= @user.level %></li>
-        <li class="list-group-item">📍 <%= @user.location %></li>
-        <li class="list-group-item">🧗 <%= @user.types_of_climbing %></li>
-      </ul>
-      <% chatroom = Chatroom.where(receiver: @user, requester: current_user).first || Chatroom.where(receiver: current_user, requester: @user).first %>
-      <% if chatroom %>
-        <%= link_to 'Send a Message', chatroom_path(chatroom), class: "btn btn-primary" %>
-      <% else %>
-        <%= simple_form_for [@user, @chatroom] do |f| %>
-          <%= f.input :receiver_id, as: :hidden, input_html: { value: @user.id } %>
-          <%= f.submit 'Send Message' %>
-        <% end %>
-      <% end %>
+    <div class="col-6 text-center">
+      <div id="map" style="width: 100%; height: 600px; margin: auto;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-      <br>
-      <p class="fs-5"><%= link_to "Back to Climbers", users_path, class: "btn btn-lg" %></p>
     </div>
-
-  <div class="col-6 fs-5 pt-5">
-  <% if @user.reviews.empty? %>
-    <small><em class="text-muted">Be the first one to review this climber</em></small>
-  <% end %>
-
-
-      <div class="bg-white rounded p-3">
-        <h5 class="text-center fs-3 fw-bolder">⭐ Review this Climber ⭐</h5>
-        <%= simple_form_for [@user, @review] do |f| %>
-          <%= f.input :description, placeholder: "Add your review here..." %>
-          <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "Select your rating", input_html: { data: { controller: "jquery-bar-rating" } } %>
-          <%= f.submit class:"btn btn-warning" %>
-        <% end %>
-      </div>
-
-<div class="bg-white rounded p-3", id="user-review-box">
-<h3 class=mt-5>Previous Reviews:</h3>
-<% @user.reviews.each do |review| %>
-  <p><%= review.description %></p><%='<i class="fas fa-star star-yellow"></i>'.html_safe * review.rating %>
-<% end %>
+  </div>
+     <br>
+      <p class="fs-5"><%= link_to "Back to Climbers", users_path %></p>
+    </div>
 </div>
-<div style="width: 100%; height: 600px; margin: auto;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
