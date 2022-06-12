@@ -49,7 +49,7 @@
           <h1>3</h1>
         </div>
         <div class="col-4 d-flex align-items-center">
-          <h3>Meet up with them and climb indoors or outdoors! It's up to you 😀</h3>
+          <h3>Meet up with them and climb!</h3>
         </div>
         <div class="col d-flex align-items-center">
           <%= image_tag('happy_climbing_couple_2.jpeg') %>
@@ -59,50 +59,17 @@
   </div>
 </div>
 
-  <div class="box-container text-center">
-    <h1 class="heading fw-bolder mt-4 mb-4">🧗‍♀️ Recently Joined Buddies 🧗🏽‍♂️</h1>
-    <div class="cards text-center">
-        <% @users.each do |user| %>
-          <div class="position-relative">
-            <%= link_to user_path(user) do %>
-              <div class="card-user">
-                <%= cl_image_tag user.photo.key %>
-                <h2 class="user-name mt-3 fw-bolder"><%= user.full_name %></h2>
-                <div class="card-user-infos">
-                  <p>📍<%= user.location %></p>
-                    <% user.types_of_climbing.each do |type_of_climbing| %>
-                    <p class="mb-0"><%= type_of_climbing %></p>
-                    <% end %>
-                </div>
-              </div>
-            <% end %>
-            <div class="d-flex justify-content-center align-items-center card-btn p-0 fw-bolder">
-              <% chatroom = Chatroom.where(receiver: user, requester: current_user).first || Chatroom.where(receiver: current_user, requester: user).first %>
-              <% if chatroom %>
-                <%= link_to 'Chat', chatroom_path(chatroom), class: "btn" %>
-              <% else %>
-                <%= simple_form_for [user, Chatroom.new] do |f| %>
-                  <%= f.input :receiver_id, as: :hidden, input_html: { value: user.id } %>
-                  <%= f.submit 'Chat', class: 'btn btn-lg' %>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-    </div>
-  </div>
-
 <div class="homepage-testimonials">
   <div class="container">
     <div class="row gx-5">
       <div class="col-4">
           <div class="row">
             <div class="col-4">
-              <%= image_tag('chris_sharma') %>
+              <img src='https://ca.slack-edge.com/T02NE0241-U03BVCNU1EY-c36d009ede6b-512' alt=''>
             </div>
             <div class="col-8">
-              <p>⭐️⭐️⭐️⭐️⭐️<br>"Belay Buddies has helped me make even more climbing friends!"</p>
-              <p class="text-right"><strong>Jerry Moffat</strong><br>Retired Profesional Climber</p>
+              <p>⭐️⭐️⭐️⭐️⭐️<br>"I just started climbing and wanted to make friends in the climbing community. Belay Buddies helped me do that!"</p>
+              <p class="text-right"><strong>Maryam Fazlali</strong><br>New Climber</p>
             </div>
           </div>
         </div>
@@ -123,7 +90,7 @@
               <%= image_tag('Janja_Garnbret') %>
             </div>
             <div class="col-8">
-              <p>⭐️⭐️⭐️⭐️⭐️<br>"I just love being able to share my passion for climbing with other people!"</p>
+              <p>⭐️⭐️⭐️⭐️⭐️<br>"I just love being able to share my passion for climbing with other people. Belay Buddies let's me do that!"</p>
               <p class="text-right"><strong>Janja Garnbret</strong><br>Climbing Olympic Gold Medalist</p>
             </div>
           </div>
