@@ -3,20 +3,16 @@
       <h1 class="heading fw-bolder text-center"><strong> Filter Your Matches </strong></h1>
       <%= form_tag users_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :location, params[:location], value:params[:location], class: "form-control fs-5", placeholder: "Enter Location"%>
-        <%= select_tag "gender", options_for_select(["male", "female"]), class: "form-control fs-5", prompt:"Select Gender"%>
-        <%= select_tag "level", options_for_select(["beginner", "intermediate", "advanced intermediate", "advanced"]), class: "form-control fs-5", prompt:"Select Level"%>
-        <%= label_tag "indoor_bouldering", "Indoor Bouldering" %>
-        <%= check_box_tag "indoor_bouldering", true %>
-        <%= label_tag "indoor_sport_climbing", "Indoor Sport Climbing" %>
-        <%= check_box_tag "indoor_sport_climbing", true %>
-        <%= label_tag "indoor_top_roping", "Indoor Top Roping" %>
-        <%= check_box_tag "indoor_top_roping", true %>
-        <%= label_tag "outdoor_bouldering", "Outdoor Bouldering" %>
-        <%= check_box_tag "outdoor_bouldering", true %>
-        <%= label_tag "outdoor_sport_climbing", "Outdoor Sport Climbing" %>
-        <%= check_box_tag "outdoor_sport_climbing", true %>
-        <%= label_tag "outdoor_trad_climbing", "Outdoor Trad Climbing" %>
-        <%= check_box_tag "outdoor_trad_climbing", true %>
+        <%= select_tag "gender", options_for_select(["Male", "Female", "Other"]), class: "form-control fs-5", prompt:"Select Gender"%>
+        <%= select_tag "level", options_for_select(["Beginner", "Intermediate", "Advanced"]), class: "form-control fs-5", prompt:"Select Level"%>
+        <%= label_tag "bouldering", "Bouldering" %>
+        <%= check_box_tag "bouldering", true %>
+        <%= label_tag "sport_climbing", "Sport Climbing" %>
+        <%= check_box_tag "sport_climbing", true %>
+        <%= label_tag "top_roping", "Top Roping" %>
+        <%= check_box_tag "top_roping", true %>
+        <%= label_tag "trad_climbing", "Trad Climbing" %>
+        <%= check_box_tag "trad_climbing", true %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
 
