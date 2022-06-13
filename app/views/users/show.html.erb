@@ -33,16 +33,21 @@
                 <%= f.submit 'Send Message', class:"btn btn-lg" %>
               <% end %>
             <% end %>
+
           </div>
+            <div id="map" style="width: 100%; height: 600px; margin: auto;"
+              data-controller="map"
+              data-map-markers-value="<%= @markers.to_json %>"
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
         </div>
       </div>
-
-      </div>
-          <div class="row my-3">
-          <div class="col-6 text-center">
-  <% if @user.reviews.empty? %>
-    <small><em class="text-muted">Be the first one to review this climber</em></small>
-  <% end %>
+    </div>
+      <div class="row my-3">
+        <div class="col-6 text-center">
+          <% if @user.reviews.empty? %>
+            <small><em class="text-muted">Be the first one to review this climber</em></small>
+        <% end %>
 
 
       <div class="">
@@ -53,23 +58,17 @@
           <%= f.submit class:"btn" %>
         <% end %>
       </div>
-
-<div class="", id="user-review-box">
-  <h3 class="text-center fs-2 fw-bolder mt-5 text-light">Previous Reviews</h3>
-    <% @user.reviews.each do |review| %>
-      <p><%= review.description %></p><%='<i class="fas fa-star star-yellow  text-warning"></i>'.html_safe * review.rating %>
-    <% end %>
-  </div>
-</div>
-
-    <div class="col-6 text-center">
-      <div id="map" style="width: 100%; height: 600px; margin: auto;"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
     </div>
-  </div>
+
+      <div class="col-6 text-center">
+        <div class="", id="user-review-box">
+          <h3 class="text-center fs-2 fw-bolder mt-5 text-light">Previous Reviews</h3>
+            <% @user.reviews.each do |review| %>
+              <p><%= review.description %></p><%='<i class="fas fa-star star-yellow  text-warning"></i>'.html_safe * review.rating %>
+            <% end %>
+          </div>
+        </div>
+      </div>
      <br>
       <p class="fs-5"><%= link_to "Back to Climbers", users_path %></p>
     </div>
