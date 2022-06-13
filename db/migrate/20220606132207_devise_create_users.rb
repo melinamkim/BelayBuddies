@@ -13,7 +13,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.boolean :bouldering
       t.boolean :sport_climbing
       t.boolean :top_roping
-      t.boolean :bouldering
       t.boolean :sport_climbing
       t.boolean :trad_climbing
       ## Recoverable
