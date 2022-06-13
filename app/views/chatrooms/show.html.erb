@@ -1,7 +1,8 @@
 <div class="container">
   <div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
   <% participant = @chatroom.requester == current_user ? @chatroom.receiver : @chatroom.requester %>
-    <h3><%= participant.full_name %></h3>
+    <h3>Your chat with <%= participant.full_name %></h3>
+    <br>
 
     <div class="messages" data-chatroom-subscription-target="messages">
 
@@ -10,6 +11,7 @@
       <% end %>
 
     </div>
+    <br>
 
     <%= simple_form_for [@chatroom, @message],
     html: {class: "d-flex"} do |f|
@@ -17,7 +19,7 @@
 
       <%= f.input :content,
         label: false,
-        placeholder: "Send a message",
+        placeholder: "Message #{participant.first_name}...",
         wrapper_html: {class: "flex-grow-1"}
       %>
 
