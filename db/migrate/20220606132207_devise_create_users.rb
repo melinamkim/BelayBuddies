@@ -11,7 +11,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.integer :age
       t.string :location
       t.boolean :bouldering
-      t.boolean :sport_climbing
       t.boolean :top_roping
       t.boolean :sport_climbing
       t.boolean :trad_climbing
