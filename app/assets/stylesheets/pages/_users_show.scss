@@ -39,9 +39,10 @@
   }
 
   img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
+    width: 100%;
+    height: calc(100vh - 66.23px);
+    object-fit: cover;
+    // border-radius: 50%;
     position: relative;
     z-index: -10;
   }
