@@ -26,6 +26,11 @@ person3 = User.create!(email: "james@gmail.com", password: "123456", first_name:
 person3.photo.attach(io: file_3, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
+file_12 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655127970/Belay_Buddies/wbs828pbubxeb8pa2rqm.jpg")
+person12 = User.create!(email: "miho@gmail.com", password: "123456", first_name: "Miho", last_name: "Nonaka", gender: "female", level: "Advanced", age: 21, location: "Fulham, London", top_roping:true, trad_climbing:true)
+person12.photo.attach(io: file_12, filename:"nes.jpg", content_type: "image/jpg")
+p "new user created"
+
 file_4 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654701024/Belay_Buddies/Usman1_n7ncfu.jpg")
 person4 = User.create!(email: "usman@gmail.com", password: "123456", first_name: "Usman", last_name: "Akram", gender: "male", level: "advanced", age: 35, location: "Paddington, London", top_roping:true, sport_climbing:true)
 person4.photo.attach(io: file_4, filename:"nes.jpg", content_type: "image/jpg")
@@ -41,13 +46,18 @@ person6 = User.create!(email: "louis@gmail.com", password: "123456", first_name:
 person6.photo.attach(io: file_6, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
+file_10 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655127345/Belay_Buddies/shauna1_ui5w0i.jpg")
+person10 = User.create!(email: "shauna@gmail.com", password: "123456", first_name: "Shauna", last_name: "Coxsey", gender: "female", level: "Advanced", age: 22, location: "Belgravia, London", top_roping:true, sport_climbing:true)
+person10.photo.attach(io: file_10, filename:"nes.jpg", content_type: "image/jpg")
+p "new user created"
+
 file_7 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654866425/Belay_Buddies/BEN_gk3vhv.jpg")
 person7 = User.create!(email: "ben@gmail.com", password: "123456", first_name: "Ben", last_name: "McLaren", gender: "male", level: "beginner", age: 60, location: "Chelsea, London", top_roping:true, sport_climbing:true)
 person7.photo.attach(io: file_7, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
 file_8 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654867552/Belay_Buddies/Giorgio_smpmqq.jpg")
-person8 = User.create!(email: "Giorgio@gmail.com", password: "123456", first_name: "Giorgio", last_name: "Gristina", gender: "male", level: "advanced", age: 22, location: "Soho, London", bouldering:true, sport_climbing:true)
+person8 = User.create!(email: "Giorgio@gmail.com", password: "123456", first_name: "Giorgio", last_name: "Gristina", gender: "male", level: "advanced", age: 22, location: "Soho, London", bouldering:true, top_roping:true)
 person8.photo.attach(io: file_8, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
@@ -55,6 +65,17 @@ file_9 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v165486
 person9 = User.create!(email: "richard@gmail.com", password: "123456", first_name: "Richard", last_name: "Phase", gender: "male", level: "Actually a skaterboy", age: 80, location: "Camden, London", top_roping:true, sport_climbing:true)
 person9.photo.attach(io: file_9, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
+
+file_11 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655127725/Belay_Buddies/Ashima_it5fy4.jpg")
+person11 = User.create!(email: "ashima@gmail.com", password: "123456", first_name: "Ashima", last_name: "Shiraishi", gender: "female", level: "Advanced", age: 21, location: "Fulham, London", top_roping:true, sport_climbing:true)
+person11.photo.attach(io: file_11, filename:"nes.jpg", content_type: "image/jpg")
+p "new user created"
+
+file_13 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655128532/Belay_Buddies/1200px-C_C3_A9dric_Lachat_Innsbruck_2010_jrqxxt.jpg")
+person13 = User.create!(email: "Cedric@gmail.com", password: "123456", first_name: "Cedric", last_name: "Lachat", gender: "male", level: "Advanced", age: 37, location: "Westminster, London", top_roping:true, sport_climbing:true)
+person13.photo.attach(io: file_13, filename:"nes.jpg", content_type: "image/jpg")
+p "new user created"
+
 
 Review.create!(description:"Advanced climber who will help you improve your bouldering technique.", rating: 5, user: person4, author: person1)
 
