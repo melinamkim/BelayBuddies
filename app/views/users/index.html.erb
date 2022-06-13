@@ -2,11 +2,11 @@
     <div class="container">
       <div class="row">
 
-      <%= form_tag users_path, method: :get, class: "d-flex  mt-3 mb-3" do %>
-        <%= text_field_tag :location, params[:location], value:params[:location], class: "form-control fs-5", placeholder: "Enter Location"%>
-        <%= select_tag "gender", options_for_select(["Male", "Female", "Other"]), class: "form-control fs-5", prompt:"Select Gender"%>
-        <%= select_tag "level", options_for_select(["Beginner", "Intermediate", "Advanced"]), class: "form-control fs-5", prompt:"Select Level"%>
-        <%= select_tag "type_of_climbing", options_for_select(["Bouldering", "Sport Climbing", "Top Roping"]), class: "form-control fs-5", prompt:"Select Climbing Interest"%>
+      <%= form_tag users_path, method: :get, class: "d-flex mt-3 mb-3 justify-content-center" do %>
+        <%= text_field_tag :location, params[:location], value:params[:location], class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", placeholder: "Enter Location"%>
+        <%= select_tag "gender", options_for_select(["Male", "Female", "Other"]), class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", prompt:"Select Gender"%>
+        <%= select_tag "level", options_for_select(["Beginner", "Intermediate", "Advanced"]), class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", prompt:"Select Level"%>
+        <%= select_tag "type_of_climbing", options_for_select(["Bouldering", "Sport Climbing", "Top Roping"]), class: "form-control fs-6", style: "width:250px; min-height:40px; margin-right:5px", prompt:"Select Climbing Interest"%>
         <%= submit_tag "Search", class: "btn btn-lg" %>
       <% end %>
     </div>
