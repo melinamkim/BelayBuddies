@@ -4,9 +4,16 @@
 
       <%= form_tag users_path, method: :get, class: "d-flex mt-3 mb-3 justify-content-center" do %>
         <%= text_field_tag :location, params[:location], value:params[:location], class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", placeholder: "Enter Location"%>
-        <%= select_tag "gender", options_for_select(["Male", "Female", "Other"]), class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", prompt:"Select Gender"%>
-        <%= select_tag "level", options_for_select(["Beginner", "Intermediate", "Advanced"]), class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", prompt:"Select Level"%>
-        <%= select_tag "type_of_climbing", options_for_select(["Bouldering", "Sport Climbing", "Top Roping"]), class: "form-control fs-6", style: "width:250px; min-height:40px; margin-right:5px", prompt:"Select Climbing Interest"%>
+        <%= select_tag "gender", options_for_select(["male", "female", "other"]), class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", prompt:"Select Gender"%>
+        <%= select_tag "level", options_for_select(["beginner", "intermediate", "advanced"]), class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", prompt:"Select Level"%>
+        <%= label_tag "bouldering", "Bouldering" %>
+        <%= check_box_tag "bouldering", true %>
+        <%= label_tag "sport_climbing", "Sport Climbing" %>
+        <%= check_box_tag "sport_climbing", true %>
+        <%= label_tag "top_roping", "Top Roping" %>
+        <%= check_box_tag "top_roping", true %>
+        <%= label_tag "trad_climbing", "Trad Climbing" %>
+        <%= check_box_tag "trad_climbing", true %>
         <%= submit_tag "Search", class: "btn btn-lg" %>
       <% end %>
     </div>

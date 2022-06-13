@@ -6,8 +6,8 @@ class UsersController < ApplicationController
     @users = @users.near(params[:location], 5) if params[:location].present? && params[:location] != ""
 
     # filters
-    @users = @users.where("gender = ?", params[:gender]) if params[:gender].present? && params[:gender] != ""
-    @users = @users.where("level = ?", params[:level]) if params[:level].present? && params[:level] != ""
+    @users = @users.where("gender ILIKE ?", params[:gender]) if params[:gender].present? && params[:gender] != ""
+    @users = @users.where("level ILIKE ?", params[:level]) if params[:level].present? && params[:level] != ""
     @users = @users.where("bouldering = ?", params[:bouldering]) if params[:bouldering].present? && params[:bouldering] != ""
     @users = @users.where("sport_climbing = ?", params[:sport_climbing]) if params[:sport_climbing].present? && params[:sport_climbing] != ""
     @users = @users.where("top_roping = ?", params[:top_roping]) if params[:top_roping].present? && params[:top_roping] != ""
