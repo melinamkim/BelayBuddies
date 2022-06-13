@@ -104,7 +104,7 @@
 
 <div class="container text-center mt-2">
   <h1>Recently Joined Buddies</h1>
-    <div class="cards text-center">
+    <div class="cards text-center" style="display:grid; grid-template-columns: 1fr 1fr 1fr 1fr;">
       <% @users.each do |user| %>
         <div class="position-relative mt-4">
           <%= link_to user_path(user) do %>
