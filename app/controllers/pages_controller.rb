@@ -2,6 +2,6 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @users = User.last(5)
+    @users = User.first(5)
   end
 end
