@@ -2,8 +2,10 @@
   <div class="container text-center">
     <br>
       <p>Find a climbing <span data-controller="typed-js"></span></p>
+      <p class="btn btn-lrg"><%= link_to "Let's go!", users_path %></p>
 
-    <form action='/users' class="align-items-center" id="searchbar">
+
+    <%# <form action='/users' class="align-items-center" id="searchbar">
       <div class="col-12">
         <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
         <div class="input-group">
@@ -12,7 +14,7 @@
        <br>
         <input type="submit", class="btn btn-primary" value="Let's Go!">
       </div>
-    </form>
+    </form> %>
   </div>
 </div>
 
@@ -100,6 +102,38 @@
   </div>
 </div>
 
+<div class="container text-center">
+  <h1>Recently Joined Buddies</h1>
+    <div class="cards text-center">
+      <% @users.each do |user| %>
+        <div class="position-relative">
+          <%= link_to user_path(user) do %>
+            <div class="card-user">
+              <%= cl_image_tag user.photo.key %>
+              <h2 class="user-name mt-3 fw-bolder"><%= user.full_name %></h2>
+                <div class="card-user-infos">
+                  <p>📍<%= user.location %></p>
+                    <% user.types_of_climbing.each do |type_of_climbing| %>
+                    <p class="mb-0"><%= type_of_climbing %></p>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+            <div class="d-flex justify-content-center align-items-center card-btn p-0 fw-bolder">
+              <% chatroom = Chatroom.where(receiver: user, requester: current_user).first || Chatroom.where(receiver: current_user, requester: user).first %>
+              <% if chatroom %>
+                <%= link_to 'Message', chatroom_path(chatroom), class: "btn" %>
+              <% else %>
+                <%= simple_form_for [user, Chatroom.new] do |f| %>
+                  <%= f.input :receiver_id, as: :hidden, input_html: { value: user.id } %>
+                  <%= f.submit 'Message', class: 'btn' %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
 
     <%# <div class="container h-100">
       <div class="d-flex justify-content-center h-100">
