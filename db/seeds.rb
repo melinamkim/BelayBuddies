@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'open-uri'
 # test
+Review.destroy_all
+Chatroom.destroy_all
 User.destroy_all
 
 file_1 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654702268/Belay_Buddies/melina1_ty8snm.jpg")
