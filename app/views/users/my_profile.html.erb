@@ -22,7 +22,7 @@
             <p><i class="fa-solid fa-map-pin text-warning"></i><%=" "%><%= @user.location %></p>
           </div>
           <div class="col-6">
-            <p><i class="fa-solid fa-mountain text-warning"></i><%=" "%><%= @user.types_of_climbing %></p>
+            <p><i class="fa-solid fa-mountain text-warning"></i><%=" "%><%= @user.types_of_climbing.join %></p>
           </div>
           <div>
           <%= link_to 'Edit My Profile', edit_user_registration_path, class: "btn" %>
