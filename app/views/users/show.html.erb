@@ -1,14 +1,14 @@
 <div class="users-show">
   <div class="container">
-    <div class="row my-3">
-        <div class="col-6 text-center">
+    <div class="row">
+    <div class="col-6">
           <%= cl_image_tag @user.photo.key %>
-        </div>
+          </div>
       <div class="col-6 text-center user-info">
         <div class="row">
     </div>
           <h1>Hi, I'm <%= @user.first_name.titleize %></h1>
-        <div class="row my-3">
+        <div class="row">
           <div class="col-6">
             <p><%= @user.gender == "male" ? '<i class="fa-solid fa-mars text-warning"></i>'.html_safe : '<i class="fa-solid fa-venus text-warning"></i>'.html_safe %><%= " "%><%= @user.age %></p>
           </div>
@@ -16,14 +16,14 @@
             <p><i class="fa-solid fa-arrow-up-wide-short text-warning"></i><%=" "%><%= @user.level.capitalize %></p>
           </div>
              </div>
-        <div class="row my-3">
+        <div class="row">
           <div class="col-6">
             <p><i class="fa-solid fa-map-pin text-warning"></i><%=" "%><%= @user.location %></p>
           </div>
           <div class="col-6">
             <p><i class="fa-solid fa-mountain text-warning"></i><%=" "%><%= @user.types_of_climbing.join(", ") %></p>
           </div>
-             <div class="row my-3">
+             <div class="row">
                 <% chatroom = Chatroom.where(receiver: @user, requester: current_user).first || Chatroom.where(receiver: current_user, requester: @user).first %>
                 <% if chatroom %>
                 <%= link_to 'Message', chatroom_path(chatroom), class: "btn btn-lg btn-primary" %>
@@ -35,15 +35,11 @@
             <% end %>
 
           </div>
-            <div id="map" style="width: 100%; height: 600px; margin: auto;"
-              data-controller="map"
-              data-map-markers-value="<%= @markers.to_json %>"
-              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-            </div>
         </div>
       </div>
     </div>
-      <div class="row my-3">
+
+      <div class="row">
         <div class="col-6 text-center">
           <% if @user.reviews.empty? %>
             <small><em class="text-muted">Be the first one to review this climber</em></small>
@@ -71,5 +67,5 @@
       </div>
      <br>
       <p class="fs-5"><%= link_to "Back to Climbers", users_path %></p>
-    </div>
+  </div>
 </div>
