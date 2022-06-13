@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   resources :chatrooms, only: %i[show index] do
     resources :messages, only: %i[new create]
   end
+
+  get "/my_profile", to: "users#my_profile", as: :my_profile
 end
