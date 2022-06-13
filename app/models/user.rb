@@ -21,10 +21,10 @@ class User < ApplicationRecord
 
   def types_of_climbing
     types = []
-    types << 'Bouldering' if self.bouldering?
-    types << 'Sport Climbing' if self.sport_climbing?
-    types << 'Top Roping' if self.top_roping?
-    types << 'Trad Climbing' if self.trad_climbing?
+    types << 'Bouldering' if bouldering?
+    types << 'Sport Climbing' if sport_climbing?
+    types << 'Top Roping' if top_roping?
+    types << 'Trad Climbing' if trad_climbing?
     p self
     p types
     types
