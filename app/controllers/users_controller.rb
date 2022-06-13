@@ -8,12 +8,10 @@ class UsersController < ApplicationController
     # filters
     @users = @users.where("gender = ?", params[:gender]) if params[:gender].present? && params[:gender] != ""
     @users = @users.where("level = ?", params[:level]) if params[:level].present? && params[:level] != ""
-    @users = @users.where("indoor_bouldering = ?", params[:indoor_bouldering]) if params[:indoor_bouldering].present? && params[:indoor_bouldering] != ""
-    @users = @users.where("indoor_sport_climbing = ?", params[:indoor_sport_climbing]) if params[:indoor_sport_climbing].present? && params[:indoor_sport_climbing] != ""
-    @users = @users.where("indoor_top_roping = ?", params[:indoor_top_roping]) if params[:indoor_top_roping].present? && params[:indoor_top_roping] != ""
-    @users = @users.where("outdoor_bouldering = ?", params[:outdoor_bouldering]) if params[:outdoor_bouldering].present? && params[:outdoor_bouldering] != ""
-    @users = @users.where("outdoor_sport_climbing = ?", params[:outdoor_sport_climbing]) if params[:outdoor_sport_climbing].present? && params[:outdoor_sport_climbing] != ""
-    @users = @users.where("outdoor_trad_climbing = ?", params[:outdoor_trad_climbing]) if params[:outdoor_trad_climbing].present? && params[:outdoor_trad_climbing] != ""
+    @users = @users.where("bouldering = ?", params[:bouldering]) if params[:bouldering].present? && params[:bouldering] != ""
+    @users = @users.where("sport_climbing = ?", params[:sport_climbing]) if params[:sport_climbing].present? && params[:sport_climbing] != ""
+    @users = @users.where("top_roping = ?", params[:top_roping]) if params[:top_roping].present? && params[:top_roping] != ""
+    @users = @users.where("trad_climbing = ?", params[:trad_climbing]) if params[:trad_climbing].present? && params[:trad_climbing] != ""
 
     @markers = @users.geocoded.map do |user|
       {
