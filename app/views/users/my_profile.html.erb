@@ -24,15 +24,16 @@
           <div class="col-6">
             <p><i class="fa-solid fa-mountain text-warning"></i><%=" "%><%= @user.types_of_climbing %></p>
           </div>
+          <div>
+          <%= link_to 'Edit My Profile', edit_user_registration_path, class: "btn" %>
+        </div>
         </div>
       </div>
 
       </div>
           <div class="row my-3">
           <div class="col-6 text-center">
-    <div>
-    <%= link_to 'Edit My Profile', edit_user_registration_path, class: "btn" %>
-    </div>
+
   <% if @user.reviews.empty? %>
     <small><em class="text-muted">Get a first review soon!</em></small>
   <% end %>
