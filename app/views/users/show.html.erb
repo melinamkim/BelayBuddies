@@ -21,7 +21,7 @@
             <p><i class="fa-solid fa-map-pin text-warning"></i><%=" "%><%= @user.location %></p>
           </div>
           <div class="col-6">
-            <p><i class="fa-solid fa-mountain text-warning"></i><%=" "%><%= @user.types_of_climbing %></p>
+            <p><i class="fa-solid fa-mountain text-warning"></i><%=" "%><%= @user.types_of_climbing.join(", ") %></p>
           </div>
              <div class="row my-3">
                 <% chatroom = Chatroom.where(receiver: @user, requester: current_user).first || Chatroom.where(receiver: current_user, requester: @user).first %>
@@ -30,7 +30,7 @@
                 <% else %>
                <%= simple_form_for [@user, @chatroom] do |f| %>
                 <%= f.input :receiver_id, as: :hidden, input_html: { value: @user.id } %>
-                <%= f.submit 'Send Message' %>
+                <%= f.submit 'Send Message', class:"btn btn-lg" %>
               <% end %>
             <% end %>
           </div>
