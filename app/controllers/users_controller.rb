@@ -27,4 +27,8 @@ class UsersController < ApplicationController
     @review = Review.new
     @chatroom = Chatroom.new
   end
+
+  def my_profile
+    @user = current_user
+  end
 end
