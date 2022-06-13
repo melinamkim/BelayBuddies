@@ -1,21 +1,15 @@
 
     <div class="container">
+      <div class="row">
 
       <%= form_tag users_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :location, params[:location], value:params[:location], class: "form-control fs-5", placeholder: "Enter Location"%>
         <%= select_tag "gender", options_for_select(["Male", "Female", "Other"]), class: "form-control fs-5", prompt:"Select Gender"%>
         <%= select_tag "level", options_for_select(["Beginner", "Intermediate", "Advanced"]), class: "form-control fs-5", prompt:"Select Level"%>
-        <%= label_tag "bouldering", "Bouldering" %>
-        <%= check_box_tag "bouldering", true %>
-        <%= label_tag "sport_climbing", "Sport Climbing" %>
-        <%= check_box_tag "sport_climbing", true %>
-        <%= label_tag "top_roping", "Top Roping" %>
-        <%= check_box_tag "top_roping", true %>
-        <%= label_tag "trad_climbing", "Trad Climbing" %>
-        <%= check_box_tag "trad_climbing", true %>
-        <%= submit_tag "Search", class: "btn" %>
+        <%= select_tag "type_of_climbing", options_for_select(["Bouldering", "Sport Climbing", "Top Roping"]), class: "form-control fs-5", prompt:"Select Climbing Interest"%>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
-
+    </div>
 
 <%# <h1 class="heading fw-bolder text-center">🧍‍♂️<strong> Climbing Buddies Matches </strong>🧍‍♀️</h1> %>
     <div class="main-container">
@@ -53,7 +47,7 @@
     </div>
   <div style="width: 50%">
     <%# <h1 class="heading text-warning fw-bolder text-center text-light">📍 <strong> Map of Your Matches </strong> 🌎</h1> %>
-    <div id="map" style="width: 100%; height: 600px;"
+    <div id="map" style="width: 100%; height: 1000px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
