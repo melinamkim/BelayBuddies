@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_13_092334) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_13_100426) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -98,10 +98,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_092334) do
     t.string "last_name"
     t.float "latitude"
     t.float "longitude"
-    t.boolean "bouldering", default: true, null: false
-    t.boolean "sport_climbing", default: true, null: false
-    t.boolean "top_roping", default: true, null: false
-    t.boolean "trad_climbing", default: true, null: false
+    t.boolean "bouldering", default: false, null: false
+    t.boolean "sport_climbing", default: false, null: false
+    t.boolean "top_roping", default: false, null: false
+    t.boolean "trad_climbing", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
