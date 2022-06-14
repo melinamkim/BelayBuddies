@@ -33,7 +33,6 @@
                 <%= f.submit 'Send Message', class:"btn btn-lg" %>
               <% end %>
             <% end %>
-
           </div>
         </div>
       </div>
@@ -60,12 +59,16 @@
         <div class="", id="user-review-box">
           <h3 class="text-center fs-2 fw-bolder mt-5">Previous Reviews</h3>
             <% @user.reviews.each do |review| %>
-              <p><%= review.description %></p><%='<i class="fas fa-star star-yellow text-warning"></i>'.html_safe * review.rating %>
+              <p><%= review.description %></p><%='<i class="fas fa-star star-yellow  text-warning"></i>'.html_safe * review.rating %><%= review.created_at %>
             <% end %>
           </div>
         </div>
+        <div id="map" style="width: 1000%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
       </div>
      <br>
       <p class="fs-5"><%= link_to "Back to Climbers", users_path %></p>
-  </div>
+</div>
 </div>
