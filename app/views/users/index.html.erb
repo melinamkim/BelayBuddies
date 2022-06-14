@@ -1,6 +1,6 @@
 
     <div class="container">
-      <div class="row">
+      <div class="row", style="margin-left:12px">
 
       <%= form_tag users_path, method: :get, class: "d-flex mt-3 mb-3 justify-content-center" do %>
         <%= text_field_tag :location, params[:location], value:params[:location], class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", placeholder: "Enter Location"%>
@@ -16,7 +16,7 @@
           <%= label_tag "trad_climbing", "Trad Climbing: " %>
           <%= check_box_tag "trad_climbing", true %>
         </div>
-          <%= submit_tag "Search", class: "btn btn-lg" %>
+        <%= submit_tag "Search", class: "btn btn-lg" %>
       <% end %>
     </div>
 
