@@ -8,7 +8,7 @@
       <div class="col-6 text-center user-info">
         <div class="row">
     </div>
-          <h1>Welcome to your profile page, <%= @user.first_name.titleize %></h1>
+          <h1>Welcome, <%= @user.first_name.titleize %></h1>
         <div class="row my-3">
           <div class="col-6">
             <p><%= @user.gender == "male" ? '<i class="fa-solid fa-mars text-warning"></i>'.html_safe : '<i class="fa-solid fa-venus text-warning"></i>'.html_safe %><%= " "%><%= @user.age %></p>
