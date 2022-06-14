@@ -61,6 +61,7 @@
 		margin-top: -100px;
     overflow: hidden;
 	}
+
 	.hero .curve::after {
 		border-radius: 50%;
 		box-shadow: inset 0 -10px 10px rgba(0,0,0,0.05);
@@ -74,12 +75,14 @@
 		width: 110%;
 		z-index: -1;
     background-image: linear-gradient(45deg, #FF7900, #F8A991, #AC8FC6);
+    // left: 0;
+    // top: 100px;
+    // bottom: 100px;
 	}
-.hero h1,
-.hero h3 {
+
+.hero h1, .hero h3 {
   text-align: center;
 }
-
 
 // .searchbar{
 //   margin-bottom: auto;
