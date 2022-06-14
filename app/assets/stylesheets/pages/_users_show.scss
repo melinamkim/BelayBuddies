@@ -5,6 +5,7 @@
     background-image: linear-gradient(45deg, #FF7900, #F8A991, #AC8FC6);
     background-clip: text;
     color: transparent;
+    padding-top: 20px;
   }
 
   h2 {
@@ -20,9 +21,9 @@
     padding: 16px 0px;
   }
 
-  .user-info h3 {
-    padding: 0px 12px;
-  }
+  // .user-info h3 {
+  //   padding: 0px 12px;
+  // }
 
   i {
     background-image: linear-gradient(45deg, #FF7900, #F8A991, #AC8FC6);
@@ -52,4 +53,8 @@
     border-radius: 15px;
     border: 3px solid #F8A991;
   }
+}
+
+.user-reviews {
+  border-radius: 15px;
 }
