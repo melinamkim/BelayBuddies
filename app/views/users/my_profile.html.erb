@@ -41,7 +41,7 @@
 <div class="", id="user-review-box">
   <h3 class="text-center fs-2 fw-bolder mt-5 text-light">Previous Reviews</h3>
     <% @user.reviews.each do |review| %>
-      <p><%= review.description %></p><%='<i class="fas fa-star star-yellow  text-warning"></i>'.html_safe * review.rating %>
+      <p><%= review.description %></p><%='<i class="fas fa-star star-yellow  text-warning"></i>'.html_safe * review.rating %><br><%= review.created_at %>
     <% end %>
   </div>
 </div>
