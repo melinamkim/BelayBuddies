@@ -84,7 +84,7 @@ Review.create!(description:"He's too advanced for me..!", rating: 3, user: perso
 
 Review.create!(description:"Can't climb well but friendly :)", rating: 5, user: person1, author: person4)
 
-Review.create!(description:"Very strong clibmer for his age.", rating: 5, user: person3, author: person1)
+Review.create!(description:"Very strong climber for his age.", rating: 5, user: person3, author: person1)
 
 Review.create!(description:"Fun to go climbing with!", rating: 5, user: person2, author: person1)
 
