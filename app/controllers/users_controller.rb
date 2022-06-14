@@ -26,6 +26,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @review = Review.new
     @chatroom = Chatroom.new
+    @markers = [
+      {
+        lat: @user.latitude,
+        lng: @user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: @user })
+      }
+    ]
   end
 
   def my_profile
