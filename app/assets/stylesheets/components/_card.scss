@@ -115,15 +115,14 @@ body {
 
 .card-user:hover {
   transform: scale(1.05);
-  background-image: linear-gradient(to bottom, #ff7900, #fd9130, #fba652, #f9ba73, #f7cc96);
-}
+  background-image: linear-gradient(to bottom, #f8a991, #fea9ac, #faadc8, #edb6df, #d9c0f1);}
 
 .btn {
   background-image: linear-gradient(to left top, #16153f, #2a2a68, #404095, #5658c4, #6c71f6);
   color: white;
   border-radius: 10px;
   &:hover {
-    background-image: linear-gradient(to bottom, #e0c8f4, #fdb8e0, #ffabba, #ffa88a, #f5b15c);
+    background-image: linear-gradient(to left top, #f69679, #fa9067, #fd8c52, #fc883b, #fa861c);
     transform: scale(1.05);
     border-radius: 10px;
     color:#16153f;

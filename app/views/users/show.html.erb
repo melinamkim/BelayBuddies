@@ -4,30 +4,41 @@
       <div class="col-6">
         <%= cl_image_tag @user.photo.key %>
         <h1 style="padding-bottom: 1rem;">Hi, I'm <%= @user.first_name.titleize %></h1>
-        <div class="d-flex justify-content-evenly">
-          <div>
-            <% if @user.gender == "male" %>
-              <i class="fa-solid fa-mars"></i>
-            <% else %>
-              <i class="fa-solid fa-venus text-warning"></i>
-            <% end %>
-            <p class="fs-6"><%= @user.age %></p>
+        <div class="row justify-content-center">
+          <div class="col-3">
+            <div class="d-flex align-items-center justify-content-start">
+              <% if @user.gender == "male" %>
+                <i class="fa-solid fa-mars me-2"></i>
+              <% else %>
+                <i class="fa-solid fa-venus text-warning me-2"></i>
+              <% end %>
+              <p class="fs-6 mb-0"><%= @user.age %></p>
+            </div>
+            <div class="d-flex align-items-center justify-content-start">
+              <i class="fa-solid fa-arrow-up-wide-short me-2"></i>
+              <p class="fs-6 mb-0"><%=" "%><%= @user.level.capitalize %></p>
+            </div>
           </div>
-          <div>
-            <i class="fa-solid fa-arrow-up-wide-short"></i>
-            <p class="fs-6"><%=" "%><%= @user.level.capitalize %></p>
+          <div class="col-5">
+            <div class="d-flex align-items-center justify-content-start">
+              <i class="fa-solid fa-map-pin me-2"></i>
+              <p class="fs-6 mb-0"><%= @user.location %></p>
+            </div>
+            <div class="d-flex align-items-center justify-content-start">
+              <i class="fa-solid fa-mountain me-2"></i>
+              <p class="fs-6 mb-0"><%= @user.types_of_climbing.join(", ") %></p>
+            </div>
           </div>
         </div>
-        <div class="d-flex justify-content-evenly">
-          <div>
-            <i class="fa-solid fa-map-pin"></i>
-            <p class="fs-6"><%= @user.location %></p>
-          </div>
-          <div>
-            <i class="fa-solid fa-mountain"></i>
-            <p class="fs-6"><%= @user.types_of_climbing.join(", ") %></p>
-          </div>
-        </div>
+        <% chatroom = Chatroom.where(receiver: @user, requester: current_user).first || Chatroom.where(receiver: current_user, requester: @user).first %>
+        <% if chatroom %>
+          <%= link_to 'Message', chatroom_path(chatroom), class: "btn btn-lg" %>
+        <% else %>
+          <%= simple_form_for [@user, @chatroom] do |f| %>
+            <%= f.input :receiver_id, as: :hidden, input_html: { value: @user.id } %>
+            <%= f.submit 'Message', class:"btn btn-lg" %>
+          <% end %>
+        <% end %>
       </div>
 
       <div class="col-6">
@@ -42,29 +53,24 @@
 
     </div>
     <div class="row col-6">
-      <% chatroom = Chatroom.where(receiver: @user, requester: current_user).first || Chatroom.where(receiver: current_user, requester: @user).first %>
-      <% if chatroom %>
-        <%= link_to 'Message', chatroom_path(chatroom), class: "btn btn-lg btn-primary" %>
-      <% else %>
-        <%= simple_form_for [@user, @chatroom] do |f| %>
-          <%= f.input :receiver_id, as: :hidden, input_html: { value: @user.id } %>
-          <%= f.submit 'Send Message', class:"btn btn-lg" %>
-        <% end %>
-      <% end %>
     </div>
 
     <div class="row">
       <div class="col-6 text-center">
-        <% if @user.reviews.empty? %>
-          <small><em class="text-muted">Be the first one to review this climber</em></small>
-        <% end %>
 
-<div class="row col-12 user-info text-center">
+
+      <div class="row col-12 user-info">
+
         <div class="">
-          <h3 class="text-center fs-2 fw-bolder">Review this Climber</h3>
+          <h3 class="text-center fs-2 fw-bolder mt-5">Review this Climber</h3>
+          <% if @user.reviews.empty? %>
+            <div class="d-flex justify-content-center align-items-center">
+              <small><em class="text-muted">Be the first one to review this climber</em></small>
+            </div>
+          <% end %>
           <%= simple_form_for [@user, @review] do |f| %>
-            <%= f.input :description, placeholder: "Add your review here..." %>
-            <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "Select your rating", input_html: { data: { controller: "jquery-bar-rating" } } %>
+            <%= f.input :description, placeholder: "Add your review here...", input_html: { class: 'fs-6 pt-3 user-reviews' } %>
+            <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "Select your rating", input_html: { class: "form-control fs-6 user-reviews", data: { controller: "jquery-bar-rating" } } %>
             <%= f.submit class:"btn" %>
           <% end %>
         </div>
@@ -74,14 +80,14 @@
     <div class="col-6 text-center">
       <div class="", id="user-review-box">
         <h3 class="text-center fs-2 fw-bolder mt-5">Previous Reviews</h3>
-          <% @user.reviews.each do |review| %>
-            <p><%= review.description %></p><%='<i class="fas fa-star star-yellow"></i>'.html_safe * review.rating %><%= review.created_at %>
-          <% end %>
+        <% @user.reviews.each do |review| %>
+          <p><%= review.description %></p><%='<i class="fas fa-star star-yellow"></i>'.html_safe * review.rating %><p><%= time_ago_in_words( review.created_at) %> ago</p>
+        <% end %>
       </div>
     </div>
 
     <br>
-    <p class="fs-5"><%= link_to "Back to Climbers", users_path %></p>
+    <p class="fs-5"><%= link_to "Back to Climbers", users_path, class: "text-light" %></p>
   </div>
 </div>
 </div>
