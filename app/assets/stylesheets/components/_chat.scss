@@ -14,12 +14,55 @@
 //   margin-right: 5px;
 // }
 
-.messages {
+
+
+.chatroom {
+  height: calc(100vh - 166.23px);
+  display: flex;
+  max-width: 650px;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 3px solid #d06201;
+  border-radius: 5%;
+  background-color: #1d1c4f ;
+  padding-top: 2px;
+  box-shadow: #0600bc;
+  overflow: auto;
+}
+
+.input-message {
+  height: 30px;
+}
+
+.message {
   width: fit-content;
-  max-width: 40%;
+  max-width: 65%;
   padding: 5px;
   border-radius: 10px;
-  margin-bottom: 10px;
-  background-color: blue ;
-  padding: 10px
+  padding: 5px
+}
+
+.my-message {
+  background-color: #0d4cab;
+}
+
+.their-message {
+  border: 3px solid #d06201;
+  background-color: #d46b18;
+}
+
+#name{
+  text-align: center;
+  padding-top: 8px;
+  letter-spacing: 4px;
+  font-size: 35px;
+}
+
+.chat-div{
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.d-flex{
+  padding: 10px;
 }
