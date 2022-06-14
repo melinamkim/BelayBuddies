@@ -7,13 +7,13 @@
         <%= select_tag "gender", options_for_select(["male", "female", "other"]), class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", prompt:"Select Gender"%>
         <%= select_tag "level", options_for_select(["beginner", "intermediate", "advanced"]), class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", prompt:"Select Level"%>
         <div class="form-check">
-          <%= label_tag "bouldering", "Bouldering" %>
+          <%= label_tag "bouldering", "Bouldering: ", class: "form-control-1" %>
           <%= check_box_tag "bouldering", true %>
-          <%= label_tag "sport_climbing", "Sport Climbing" %>
+          <%= label_tag "sport_climbing", "Sport Climbing: " %>
           <%= check_box_tag "sport_climbing", true %>
-          <%= label_tag "top_roping", "Top Roping" %>
+          <%= label_tag "top_roping", "Top Roping: " %>
           <%= check_box_tag "top_roping", true %>
-          <%= label_tag "trad_climbing", "Trad Climbing" %>
+          <%= label_tag "trad_climbing", "Trad Climbing: " %>
           <%= check_box_tag "trad_climbing", true %>
         </div>
           <%= submit_tag "Search", class: "btn btn-lg" %>
