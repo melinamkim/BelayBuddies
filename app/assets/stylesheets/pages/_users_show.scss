@@ -15,7 +15,9 @@
   }
 
   h3 {
-    color: #F63C02;
+    background-image: linear-gradient(45deg, #FF7900, #F8A991, #AC8FC6);
+    background-clip: text;
+    color: transparent;
     font-size: 24px;
     padding: 16px 0px;
   }
@@ -47,7 +49,7 @@
     height: 24rem;
     width: 24rem;
     object-fit: center;
-    border-radius: 50%;
-    border: 2px solid #fff;
+    border-radius: 10%;
+    border: 2px solid #F8A991;
   }
 }
