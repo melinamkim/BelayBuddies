@@ -10,9 +10,9 @@
 
 #map {
   height: 100vh;
-  box-shadow: 1px 1px 10px #d77506;
+  border: 3px solid #F8A991;
   object-fit: cover !important;
-  border-radius: 10px;
+  border-radius: 15px;
   position: sticky;
   top: 0;
 }

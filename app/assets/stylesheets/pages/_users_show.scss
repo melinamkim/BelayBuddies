@@ -1,9 +1,7 @@
 .users-show {
 
-  padding-top: 48px;
-
   h1 {
-    font-size: 64px;
+    font-size: 50px;
     background-image: linear-gradient(45deg, #FF7900, #F8A991, #AC8FC6);
     background-clip: text;
     color: transparent;
@@ -27,8 +25,10 @@
   }
 
   i {
-    color: #F63C02;
-    margin-right: 24px;
+    background-image: linear-gradient(45deg, #FF7900, #F8A991, #AC8FC6);
+    background-clip: text;
+    color: transparent;
+    //margin-right: 24px;
     font-size: 24px;
   }
 
@@ -49,7 +49,7 @@
     height: 24rem;
     width: 24rem;
     object-fit: center;
-    border-radius: 10%;
-    border: 2px solid #F8A991;
+    border-radius: 15px;
+    border: 3px solid #F8A991;
   }
 }
