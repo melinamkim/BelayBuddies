@@ -22,12 +22,12 @@ person2 = User.create!(email: "tassilo@gmail.com", password: "123456", first_nam
 person2.photo.attach(io: file_2, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
-file_3 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654860938/Belay_Buddies/james1_qt2ito.jpg")
+file_3 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655198063/Belay_Buddies/46712861_10156053283633505_2971007338829316096_n_uqgpwd.jpg")
 person3 = User.create!(email: "james@gmail.com", password: "123456", first_name: "James", last_name: "Hsia", gender: "male", level: "intermediate", age: 50, location: "Suzhou", top_roping:true, bouldering:true)
 person3.photo.attach(io: file_3, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
-file_12 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655127970/Belay_Buddies/wbs828pbubxeb8pa2rqm.jpg")
+file_12 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655197594/Belay_Buddies/miho11_qh5qtz.jpg")
 person12 = User.create!(email: "miho@gmail.com", password: "123456", first_name: "Miho", last_name: "Nonaka", gender: "female", level: "Advanced", age: 21, location: "Tokyo", sport_climbing:true, bouldering:true)
 person12.photo.attach(io: file_12, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
@@ -47,7 +47,7 @@ person6 = User.create!(email: "louis@gmail.com", password: "123456", first_name:
 person6.photo.attach(io: file_6, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
-file_10 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655127345/Belay_Buddies/shauna1_ui5w0i.jpg")
+file_10 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655197447/Belay_Buddies/shauna11_hplau5.jpg")
 person10 = User.create!(email: "shauna@gmail.com", password: "123456", first_name: "Shauna", last_name: "Coxsey", gender: "female", level: "Advanced", age: 22, location: "Sheffield", bouldering:true, sport_climbing:true)
 person10.photo.attach(io: file_10, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
@@ -55,6 +55,11 @@ p "new user created"
 file_7 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654866425/Belay_Buddies/BEN_gk3vhv.jpg")
 person7 = User.create!(email: "ben@gmail.com", password: "123456", first_name: "Ben", last_name: "McLaren", gender: "male", level: "beginner", age: 60, location: "Chelsea, London", top_roping:true, sport_climbing:true)
 person7.photo.attach(io: file_7, filename:"nes.jpg", content_type: "image/jpg")
+p "new user created"
+
+file_11 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655197847/Belay_Buddies/ashima11_cchgra.jpg")
+person11 = User.create!(email: "ashima@gmail.com", password: "123456", first_name: "Ashima", last_name: "Shiraishi", gender: "female", level: "advanced", age: 21, location: "New York City", bouldering:true, sport_climbing:true)
+person11.photo.attach(io: file_11, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
 file_8 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654867552/Belay_Buddies/Giorgio_smpmqq.jpg")
@@ -65,11 +70,6 @@ p "new user created"
 file_9 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654868175/Belay_Buddies/Richard_xtfmlx.jpg")
 person9 = User.create!(email: "richard@gmail.com", password: "123456", first_name: "Richard", last_name: "Phase", gender: "male", level: "beginner", age: 80, location: "Camden, London", top_roping:true, bouldering:true)
 person9.photo.attach(io: file_9, filename:"nes.jpg", content_type: "image/jpg")
-p "new user created"
-
-file_11 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655127725/Belay_Buddies/Ashima_it5fy4.jpg")
-person11 = User.create!(email: "ashima@gmail.com", password: "123456", first_name: "Ashima", last_name: "Shiraishi", gender: "female", level: "advanced", age: 21, location: "New York City", bouldering:true, sport_climbing:true)
-person11.photo.attach(io: file_11, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
 file_13 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655128532/Belay_Buddies/1200px-C_C3_A9dric_Lachat_Innsbruck_2010_jrqxxt.jpg")
