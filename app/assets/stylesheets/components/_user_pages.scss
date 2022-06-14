@@ -6,9 +6,10 @@
   display:flex;
   justify-content: center;
   padding-top: 10px;
-  padding: 5px 5px 0 20px;
+  padding: 5px 10px 0 20px;
   margin-top: auto;
   margin-bottom: auto;
+  margin: 4px 5px 4px 0;
   color: #333;
   font-size: 16px;
   font-weight: 500;
@@ -23,6 +24,7 @@
 
 input[name="bouldering"] {
   background-image: url("assets/icons8-rock-40.png");
+
 }
 input[name="sport_climbing"] {
   background-image: url("assets/icons8-harness-40.png");
@@ -42,8 +44,10 @@ input[type="checkbox"] {
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   /* Not removed via appearance */
-  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px;
   font: inherit;
   color: currentColor;
   width: 29px;
@@ -61,8 +65,8 @@ input[type="checkbox"] {
 
 input[type="checkbox"]::before {
   content: "";
-  width: 0.65em;
-  height: 0.65em;
+  width: 0.95em;
+  height: 0.95em;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em var(--form-control-color);
