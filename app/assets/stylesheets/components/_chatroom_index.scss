@@ -5,10 +5,15 @@
   height: 120px;
   width: 50%;
   margin: 20px auto;
-  background-image: linear-gradient(to bottom, #fbfaf9, #ffe8c7, #ffd695, #ffc661, #fcb61e);
+  background-image: linear-gradient(to top, #bdbcba, #cbcac7, #dad8d4, #e9e6e1, #f8f4ef);
   border-radius: 20px;
   box-shadow: 0 0 10px 0 rgb(245, 112, 3);
   justify-content: center;
+}
+
+.inbox-chats:hover {
+  transform: scale(1.05);
+  background-image: linear-gradient(to bottom, #ff7900, #fd9130, #fba652, #f9ba73, #f7cc96);
 }
 
 .inbox-chats img {
