@@ -3,6 +3,7 @@ class ChatroomsController < ApplicationController
 
   def index
     @chatrooms = current_user.chatrooms
+    # To do - @message = Message.where("chatroom_id: ?", @chatroom.id).last
   end
 
   def show
