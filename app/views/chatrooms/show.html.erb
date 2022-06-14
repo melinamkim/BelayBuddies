@@ -1,29 +1,31 @@
 <div class="container">
-  <div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-  <% participant = @chatroom.requester == current_user ? @chatroom.receiver : @chatroom.requester %>
-    <h3>Your chat with <%= participant.full_name %></h3>
-    <br>
+  <div class="chat-div">
+    <% participant = @chatroom.requester == current_user ? @chatroom.receiver : @chatroom.requester %>
+    <h3 id="name"> <%= image_tag participant.photo, class: "avatar dropdown-toggle" %> <%= @chatroom.receiver.full_name %> </h3>
+    <div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+      <div class="flex-grow-1">
+        <br>
 
-    <div class="messages" data-chatroom-subscription-target="messages">
+        <div class="messages flex-grow-1" data-chatroom-subscription-target="messages">
 
-      <% @chatroom.messages.each do |message| %>
-        <%= render 'messages/message', message: message %>
-      <% end %>
+          <% @chatroom.messages.each do |message| %>
+            <%= render 'messages/message', message: message %>
+          <% end %>
+
+        </div>
+        <br>
+      </div>
 
     </div>
-    <br>
-
-    <%= simple_form_for [@chatroom, @message],
-    html: {class: "d-flex"} do |f|
-    %>
-
-      <%= f.input :content,
-        label: false,
-        placeholder: "Message #{participant.first_name}...",
-        wrapper_html: {class: "flex-grow-1"}
+      <%= simple_form_for [@chatroom, @message],
+      html: {class: "d-flex"} do |f|
       %>
-
-      <%= f.submit "Send", class:"btn btn-primary mb-3"%>
-    <% end %>
+        <%= f.input :content,
+          label: false,
+          placeholder: "Message #{participant.first_name}...",
+          wrapper_html: {class: "flex-grow-1"}, input_html: { class: "input-message"}
+        %>
+        <%= f.submit "Send", class:"btn btn-primary mb-3"%>
+      <% end %>
   </div>
 </div>
