@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="chat-div">
+  <div class="chat-div" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>" data-user="<%= current_user.id %>">
     <% participant = @chatroom.requester == current_user ? @chatroom.receiver : @chatroom.requester %>
     <h1 id="name"> <%= cl_image_tag participant.photo.key, class: "avatar dropdown-toggle" %> <%= @chatroom.receiver.full_name %> </h1>
-    <div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+    <div class="container chatroom" >
       <div class="flex-grow-1">
         <br>
 
@@ -15,10 +15,10 @@
         </div>
         <br>
       </div>
-
     </div>
+
       <%= simple_form_for [@chatroom, @message],
-      html: {class: "d-flex"} do |f|
+      html: {class: "d-flex", data: {chatroom_subscription_target: "form"}} do |f|
       %>
         <%= f.input :content,
           label: false,
