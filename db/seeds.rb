@@ -17,7 +17,7 @@ person1 = User.create!(email: "melina@gmail.com", password: "123456", first_name
 person1.photo.attach(io: file_1, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
-file_2 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655220888/Belay_Buddies/DSC_0743_uddv26.jpg")
+file_2 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655297681/Belay_Buddies/tas_wf1vnq.jpg")
 person2 = User.create!(email: "tassilo@gmail.com", password: "123456", first_name: "Tassilo", last_name: "Brecht", gender: "male", level: "beginner", age: 18, location: "Camden, London", bouldering:true, trad_climbing:true)
 person2.photo.attach(io: file_2, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
