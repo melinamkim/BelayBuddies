@@ -78,6 +78,12 @@ input[type="checkbox"]::before {
 input[type="checkbox"]:checked::before {
   transform: scale(1);
 }
+
+#user-review-box {
+  border: 3px solid #F8A991;
+  border-radius: 20px;
+
+}
 // #user-review-box {
 // }
 
