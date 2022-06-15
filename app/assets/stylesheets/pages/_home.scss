@@ -3,6 +3,7 @@
 .banner {
   background-size: cover;
   background-position: center;
+  // object-fit: cover;
   padding: 280px 304px 304px 304px;
 }
 
@@ -23,7 +24,7 @@
   opacity: 0.9;
   text-shadow: 1px 1px 3px #f63c02(0,0,0,0.2);
   font-family: Roboto;
-  font-weight: bold;
+  font-weight: bolder;
   border-radius: 10px;
   padding: 10px;
 }
