@@ -1,7 +1,7 @@
 <div class="container">
   <div class="chat-div" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>" data-user="<%= current_user.id %>">
     <% participant = @chatroom.requester == current_user ? @chatroom.receiver : @chatroom.requester %>
-    <h1 id="name"> <%= cl_image_tag participant.photo.key, class: "avatar dropdown-toggle" %> <%= @chatroom.receiver.full_name %> </h1>
+    <h1 id="name"> <%= cl_image_tag participant.photo.key, class: "avatar dropdown-toggle" %> <%= participant.full_name %> </h1>
     <div class="container chatroom" >
       <div class="flex-grow-1">
         <br>
