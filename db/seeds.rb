@@ -28,7 +28,7 @@ person3.photo.attach(io: file_3, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
 file_12 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655197594/Belay_Buddies/miho11_qh5qtz.jpg")
-person12 = User.create!(email: "miho@gmail.com", password: "123456", first_name: "Miho", last_name: "Nonaka", gender: "female", level: "Advanced", age: 21, location: "Tokyo", sport_climbing:true, bouldering:true)
+person12 = User.create!(email: "miho@gmail.com", password: "123456", first_name: "Miho", last_name: "Nonaka", gender: "female", level: "Advanced", age: 21, location: "Ebisu, Tokyo", sport_climbing:true, bouldering:true)
 person12.photo.attach(io: file_12, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
@@ -58,7 +58,7 @@ person7.photo.attach(io: file_7, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
 file_11 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655197847/Belay_Buddies/ashima11_cchgra.jpg")
-person11 = User.create!(email: "ashima@gmail.com", password: "123456", first_name: "Ashima", last_name: "Shiraishi", gender: "female", level: "advanced", age: 21, location: "New York City", bouldering:true, sport_climbing:true)
+person11 = User.create!(email: "ashima@gmail.com", password: "123456", first_name: "Ashima", last_name: "Shiraishi", gender: "female", level: "advanced", age: 21, location: "Shinjuku, Tokyo", bouldering:true, sport_climbing:true)
 person11.photo.attach(io: file_11, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
