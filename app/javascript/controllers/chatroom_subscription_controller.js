@@ -7,7 +7,7 @@ export default class extends Controller {
 
   connect() {
     console.log('HELLO');
-    this.channel = createConsumer().subscription.create(
+    this.channel = createConsumer().subscriptions.create(
       { channel: 'ChatroomChannel', id: this.chatroomIdValue },
       {
         received: (message) => {
