@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   height: 120px;
-  width: 50%;
+  width: 46%;
   margin: 20px auto;
   background-image: linear-gradient(to top, #bdbcba, #cbcac7, #dad8d4, #e9e6e1, #f8f4ef);
   border-radius: 20px;
@@ -26,7 +26,9 @@
 }
 
 .inbox-user {
-  font-size: 26px;
+  padding-left: 90px;
+  padding-top: 10px;
+  font-size: 20px;
   color: #16153F;
   justify-content: center;
   text-align: center;
