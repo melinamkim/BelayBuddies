@@ -104,6 +104,6 @@ Review.create!(description:"Fun to go climbing with!", rating: 5, user: person2,
 
 Review.create!(description:"Very Fast", rating: 2, user: person7, author: person6)
 
-Review.create!(description:"Super chill and relaxed. Will help you become a better climber.", rating: 5, user: person7, author: person14)
+Review.create!(description:"Super chill and relaxed. Will help you become a better climber.", rating: 5, user: person14, author: person1)
 
 Review.create!(description:"Didn't show up on time.", rating: 3, user: person2, author: person8)
