@@ -1,4 +1,4 @@
-<div class="d-flex <%= message.user == current_user ? 'justify-content-end' : 'justify-content-start' %>" data-chatroom-subscription-target="chat" data-user="<%= message.user.id %>">
+<div class="d-flex <%= message.user == current_user ? 'justify-content-end' : 'justify-content-start' %>">
   <div id="message-<%= message.id %>" class="message <%= message.user == current_user ? 'my-message' : 'their-message' %>">
     <small>
       <strong><%= message.user.full_name %></strong>
