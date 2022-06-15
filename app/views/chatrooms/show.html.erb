@@ -2,6 +2,7 @@
   <div class="chat-div">
     <% participant = @chatroom.requester == current_user ? @chatroom.receiver : @chatroom.requester %>
     <h3 id="name"> <%= image_tag participant.photo, class: "avatar dropdown-toggle" %> <%= @chatroom.receiver.full_name %> </h3>
+      <br>
     <div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
       <div class="flex-grow-1">
         <br>
