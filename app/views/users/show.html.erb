@@ -62,7 +62,7 @@
       <div class="row col-12 user-info">
 
         <div class="">
-          <h3 class="text-center fs-2 fw-bolder mt-5">Review this Climber</h3>
+          <h3 class="text-center fs-2 fw-bolder mt-1">Review this Climber</h3>
           <% if @user.reviews.empty? %>
             <div class="d-flex justify-content-center align-items-center">
               <small><em class="text-muted">Be the first one to review this climber</em></small>
@@ -79,7 +79,7 @@
 
     <div class="col-6 text-center">
       <div class="", id="user-review-box">
-        <h3 class="text-center fs-2 fw-bolder mt-5">Previous Reviews</h3>
+        <h3 class="text-center fs-2 fw-bolder mt-1">Previous Reviews</h3>
         <% @user.reviews.each do |review| %>
           <p class=fs-6><%= review.description %></p><p><%='<i class="fas fa-star star-yellow"></i>'.html_safe * review.rating %><%=" " %><%= time_ago_in_words( review.created_at) %> ago</p>
         <br>
