@@ -1,5 +1,5 @@
 .mapboxgl-popup {
-  max-width: 100px;
+  max-width: 200px;
   border-radius: 15px;
 }
 
@@ -10,7 +10,7 @@
   color: #16153f;
   overflow: hidden;
   border-radius: 15px !important;
-  opacity: 0.8;
+  // opacity: 0.8;
 }
 
 #map {
