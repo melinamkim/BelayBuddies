@@ -23,12 +23,12 @@ person2.photo.attach(io: file_2, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
 file_3 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655198063/Belay_Buddies/46712861_10156053283633505_2971007338829316096_n_uqgpwd.jpg")
-person3 = User.create!(email: "james@gmail.com", password: "123456", first_name: "James", last_name: "Hsia", gender: "male", level: "intermediate", age: 39, location: "Suzhou", top_roping:true, bouldering:true)
+person3 = User.create!(email: "james@gmail.com", password: "123456", first_name: "James", last_name: "Hsia", gender: "male", level: "intermediate", age: 39, location: "Suzhou, China", top_roping:true, bouldering:true)
 person3.photo.attach(io: file_3, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
 file_12 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655197594/Belay_Buddies/miho11_qh5qtz.jpg")
-person12 = User.create!(email: "miho@gmail.com", password: "123456", first_name: "Miho", last_name: "Nonaka", gender: "female", level: "Advanced", age: 21, location: "Ebisu, Tokyo", sport_climbing:true, bouldering:true)
+person12 = User.create!(email: "miho@gmail.com", password: "123456", first_name: "Miho", last_name: "Nonaka", gender: "female", level: "Advanced", age: 21, location: "Tokyo, Japan", sport_climbing:true, bouldering:true)
 person12.photo.attach(io: file_12, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
@@ -48,7 +48,7 @@ person6.photo.attach(io: file_6, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
 file_10 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655197447/Belay_Buddies/shauna11_hplau5.jpg")
-person10 = User.create!(email: "shauna@gmail.com", password: "123456", first_name: "Shauna", last_name: "Coxsey", gender: "female", level: "advanced", age: 22, location: "Sheffield", bouldering:true, sport_climbing:true)
+person10 = User.create!(email: "shauna@gmail.com", password: "123456", first_name: "Shauna", last_name: "Coxsey", gender: "female", level: "advanced", age: 27, location: "Sheffield, England", bouldering:true, sport_climbing:true)
 person10.photo.attach(io: file_10, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
@@ -58,7 +58,7 @@ person7.photo.attach(io: file_7, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
 file_11 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655197847/Belay_Buddies/ashima11_cchgra.jpg")
-person11 = User.create!(email: "ashima@gmail.com", password: "123456", first_name: "Ashima", last_name: "Shiraishi", gender: "female", level: "advanced", age: 21, location: "Shinjuku, Tokyo", bouldering:true, sport_climbing:true)
+person11 = User.create!(email: "ashima@gmail.com", password: "123456", first_name: "Ashima", last_name: "Shiraishi", gender: "female", level: "advanced", age: 21, location: "Tokyo, Japan", bouldering:true, sport_climbing:true)
 person11.photo.attach(io: file_11, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
@@ -68,12 +68,12 @@ person8.photo.attach(io: file_8, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
 file_9 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1654868175/Belay_Buddies/Richard_xtfmlx.jpg")
-person9 = User.create!(email: "richard@gmail.com", password: "123456", first_name: "Richard", last_name: "Phase", gender: "male", level: "beginner", age: 80, location: "Camden, London", top_roping:true, bouldering:true)
+person9 = User.create!(email: "richard@gmail.com", password: "123456", first_name: "Richard", last_name: "Phase", gender: "male", level: "beginner", age: 80, location: "Bromley, London", top_roping:true, bouldering:true)
 person9.photo.attach(io: file_9, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
 file_13 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655128532/Belay_Buddies/1200px-C_C3_A9dric_Lachat_Innsbruck_2010_jrqxxt.jpg")
-person13 = User.create!(email: "Cedric@gmail.com", password: "123456", first_name: "Cedric", last_name: "Lachat", gender: "male", level: "advanced", age: 37, location: "Zurich", top_roping:true, sport_climbing:true)
+person13 = User.create!(email: "Cedric@gmail.com", password: "123456", first_name: "Cedric", last_name: "Lachat", gender: "male", level: "advanced", age: 37, location: "Zurich, Switzerland", top_roping:true, sport_climbing:true)
 person13.photo.attach(io: file_13, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
@@ -83,27 +83,36 @@ person14.photo.attach(io: file_14, filename:"nes.jpg", content_type: "image/jpg"
 p "new user created"
 
 file_15 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655285463/Belay_Buddies/janja_wy4lwf.jpg")
-person15 = User.create!(email: "janja@gmail.com", password: "123456", first_name: "Janja", last_name: "Garnbret", gender: "female", level: "advanced", age: 23, location: "Ljubljana", trad_climbing:true, sport_climbing:true)
+person15 = User.create!(email: "janja@gmail.com", password: "123456", first_name: "Janja", last_name: "Garnbret", gender: "female", level: "advanced", age: 23, location: "Ljubljana, Slovenia", trad_climbing:true, sport_climbing:true)
 person15.photo.attach(io: file_15, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
 file_16 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655286323/Belay_Buddies/marco_pwuj4s.jpg")
-person16 = User.create!(email: "marco@gmail.com", password: "123456", first_name: "Marco", last_name: "Ricci", gender: "male", level: "intermediate", age: 27, location: "Rome", bouldering:true, sport_climbing:true)
+person16 = User.create!(email: "marco@gmail.com", password: "123456", first_name: "Marco", last_name: "Ricci", gender: "male", level: "intermediate", age: 27, location: "Rome, Italy", bouldering:true, trad_climbing:true)
 person16.photo.attach(io: file_16, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
-Review.create!(description:"Advanced climber who will help you improve your bouldering technique.", rating: 5, user: person4, author: person1)
+file_17 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655286323/Belay_Buddies/marco_pwuj4s.jpg")
+person17 = User.create!(email: "todd@gmail.com", password: "123456", first_name: "Todd", last_name: "Neale", gender: "male", level: "beginner", age: 29, location: "Sheffield, England", bouldering:true, sport_climbing:true)
+person17.photo.attach(io: file_17, filename:"nes.jpg", content_type: "image/jpg")
+p "new user created"
 
-Review.create!(description:"He's too advanced for me..!", rating: 3, user: person4, author: person6)
+Review.create!(description:"Advanced climber who will help you improve your bouldering technique.", rating: 5, user: person4, author: person13)
 
-Review.create!(description:"Can't climb well but friendly :)", rating: 5, user: person1, author: person4)
+Review.create!(description:"He's too advanced for me..!", rating: 3, user: person4, author: person15)
 
-Review.create!(description:"Strong climber for his age. Patient.", rating: 5, user: person3, author: person16)
+Review.create!(description:"Can't climb well but friendly :)", rating: 5, user: person1, author: person7)
 
-Review.create!(description:"Fun to go climbing with!", rating: 5, user: person2, author: person1)
+Review.create!(description:"Strong climber for his age. Patient.", rating: 5, user: person3, author: person10)
 
-Review.create!(description:"Very Fast", rating: 2, user: person7, author: person6)
+Review.create!(description:"Fun to go climbing with!", rating: 5, user: person2, author: person16)
+
+Review.create!(description:"Very fast.", rating: 2, user: person7, author: person6)
 
 Review.create!(description:"Super chill and relaxed. Will help you become a better climber.", rating: 5, user: person14, author: person1)
 
 Review.create!(description:"Didn't show up on time.", rating: 3, user: person2, author: person8)
+
+Review.create!(description:"Average climber.", rating: 3, user: person17, author: person13)
+
+Review.create!(description:"Professional rock climber with advanced techniques.", rating: 5, user: person10, author: person14)
