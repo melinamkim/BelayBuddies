@@ -51,3 +51,16 @@ $color: #16153f;
     }
   }
 }
+
+.btn-contrast {
+  background-image: linear-gradient(to left top, #f69679, #fa9067, #fd8c52, #fc883b, #fa861c);
+  transform: scale(1.05);
+  border-radius: 10px;
+  color:#16153f;
+
+  &:hover {
+    background-image: linear-gradient(to left top, #16153f, #2a2a68, #404095, #5658c4, #6c71f6);
+  color: white;
+  border-radius: 10px;
+  }
+}
