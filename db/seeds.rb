@@ -92,9 +92,14 @@ person16 = User.create!(email: "marco@gmail.com", password: "123456", first_name
 person16.photo.attach(io: file_16, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
-file_17 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655286323/Belay_Buddies/marco_pwuj4s.jpg")
+file_17 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655375247/Belay_Buddies/todd_h6skdu.jpg")
 person17 = User.create!(email: "todd@gmail.com", password: "123456", first_name: "Todd", last_name: "Neale", gender: "male", level: "beginner", age: 29, location: "Sheffield, England", bouldering:true, sport_climbing:true)
 person17.photo.attach(io: file_17, filename:"nes.jpg", content_type: "image/jpg")
+p "new user created"
+
+file_18 = URI.open("https://res.cloudinary.com/tassilobrecht/image/upload/v1655376821/Belay_Buddies/harriett_iczrjx.jpg")
+person18 = User.create!(email: "harriett@gmail.com", password: "123456", first_name: "Harriet", last_name: "Bullough", gender: "female", level: "intermediate", age: 26, location: "Havering, London", bouldering:true, sport_climbing:true)
+person18.photo.attach(io: file_18, filename:"nes.jpg", content_type: "image/jpg")
 p "new user created"
 
 Review.create!(description:"Advanced climber who will help you improve your bouldering technique.", rating: 5, user: person4, author: person13)
