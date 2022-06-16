@@ -1,8 +1,8 @@
 
     <div class="container">
-      <div class="row", style="margin-left:12px">
+      <div class="row searchbar-wrapper", style="margin-left:12px">
 
-      <%= form_tag users_path, method: :get, class: "d-flex mt-3 mb-3 justify-content-center" do %>
+      <%= form_tag users_path, method: :get, class: "d-flex justify-content-center" do %>
         <%= text_field_tag :location, params[:location], value:params[:location], class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", placeholder: "Enter Location"%>
         <%= select_tag "gender", options_for_select(["male", "female", "other"]), class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", prompt:"Select Gender"%>
         <%= select_tag "level", options_for_select(["beginner", "intermediate", "advanced"]), class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", prompt:"Select Level"%>
@@ -56,7 +56,7 @@
     </div>
   <div style="width: 50%">
     <%# <h1 class="heading text-warning fw-bolder text-center text-light">📍 <strong> Map of Your Matches </strong> 🌎</h1> %>
-    <div id="map" style="width: 100%; height: 1000px;"
+    <div id="map" style="width: 100%; top: 0; height: calc(100vh - 200px);"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
