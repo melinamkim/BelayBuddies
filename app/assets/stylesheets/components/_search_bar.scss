@@ -26,6 +26,16 @@ font-weight: 500;
 
   }
 
+.searchbar-wrapper {
+
+  margin-left: 12px;
+  top: 40px;
+  padding-top: 40px;
+  position: sticky;
+  z-index: 10;
+  background-color: #16153f;
+}
+
 // #searchbtn
 // { border:0;
 // padding: 0px 10px;
