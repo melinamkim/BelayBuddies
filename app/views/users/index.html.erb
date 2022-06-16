@@ -56,7 +56,7 @@
     </div>
   <div style="width: 50%">
     <%# <h1 class="heading text-warning fw-bolder text-center text-light">📍 <strong> Map of Your Matches </strong> 🌎</h1> %>
-    <div id="map" style="width: 100%; top: 0; height: calc(100vh - 200px);"
+    <div id="map" style="width: 100%; top: 150px; height: calc(100vh - 200px);"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
